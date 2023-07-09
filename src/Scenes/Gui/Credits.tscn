@@ -1,0 +1,92 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://src/Scenes/Gui/Themes/CardLabels.tres" type="Theme" id=1]
+[ext_resource path="res://src/Scenes/Gui/Themes/MenusTheme.tres" type="Theme" id=2]
+[ext_resource path="res://src/scripts/Gui/Credits.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Sprites/Gui/Icons/White/2x/arrowLeftPressed.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Sprites/Gui/Icons/White/2x/arrowLeft.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Sprites/Gui/Icons/White/2x/arrowLeftDisabled.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Sprites/Gui/Icons/White/2x/arrowLeftHover.png" type="Texture" id=7]
+
+[node name="Credits" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="CreditsContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+margin_top = -809.0
+margin_bottom = 215.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CreditsContainer"]
+margin_right = 600.0
+margin_bottom = 806.0
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CreditsContainer/HBoxContainer"]
+margin_left = 36.0
+margin_right = 563.0
+margin_bottom = 806.0
+
+[node name="Credits" type="Label" parent="CreditsContainer/HBoxContainer/VBoxContainer"]
+margin_right = 527.0
+margin_bottom = 713.0
+theme = ExtResource( 1 )
+text = "
+Special Thanks To
+Shane Ivers at 
+https://www.silvermansound.com/
+for the music
+
+Kenny® at 
+https://www.kenney.nl/
+for the game assets and sound effects
+
+In Loving Memory Of
+
+Ilan Zalman Korobkin
+&
+Leonard Korobkin
+
+Lead designer
+Benjamin Korobkin
+
+Producer
+Aviram Yagena
+
+"
+align = 1
+valign = 1
+
+[node name="CreditsTitle" type="Label" parent="CreditsContainer/HBoxContainer/VBoxContainer"]
+margin_top = 717.0
+margin_right = 527.0
+margin_bottom = 806.0
+theme = ExtResource( 2 )
+text = "Korban Shop"
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="LeftButton" type="TextureButton" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 61.0
+margin_top = -160.0
+margin_right = 161.0
+margin_bottom = -60.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 4 )
+texture_hover = ExtResource( 7 )
+texture_disabled = ExtResource( 6 )
+
+[connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]
+[connection signal="pressed" from="LeftButton" to="." method="_on_LeftButton_pressed"]

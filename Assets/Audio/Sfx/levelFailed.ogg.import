@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/levelFailed.ogg-615d112545c48924049b152438f8650d.oggstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Sfx/levelFailed.ogg"
+dest_files=[ "res://.import/levelFailed.ogg-615d112545c48924049b152438f8650d.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

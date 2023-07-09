@@ -1,0 +1,914 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://Assets/Sprites/Gui/Icons/White/2x/downLeftClick.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Sprites/Gui/Icons/White/2x/downLeft.png" type="Texture" id=2]
+[ext_resource path="res://src/Scenes/Gui/Themes/CardLabels.tres" type="Theme" id=3]
+[ext_resource path="res://src/Scenes/Gui/Themes/FlatPanel.tres" type="Theme" id=4]
+[ext_resource path="res://src/scripts/Gui/TutorialGui.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Sprites/Gui/Icons/White/2x/downRightClick.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Sprites/Gui/Icons/White/2x/downRight.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Sprites/Gui/Icons/White/1x/arrowRight.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Sprites/Gui/Icons/White/2x/arrowRightHover.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Sprites/Gui/Icons/White/2x/arrowRightPressed.png" type="Texture" id=10]
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("DownLeft:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ ExtResource( 2 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "click"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("DownLeft:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 2 ), ExtResource( 1 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("DownLeft:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ ExtResource( 2 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "click"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("DownLeft:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 2 ), ExtResource( 1 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 0.001
+
+[sub_resource type="Animation" id=6]
+resource_name = "click"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 7 ), ExtResource( 6 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Texture:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 325, -74 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("DownLeft:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ ExtResource( 2 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "click"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("DownLeft:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 2 ), ExtResource( 1 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("DownLeft:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ ExtResource( 2 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "click"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("DownLeft:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 2 ), ExtResource( 1 ) ]
+}
+
+[sub_resource type="Animation" id=11]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Texture:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "blink"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Texture:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true, false, true ]
+}
+
+[sub_resource type="Animation" id=13]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Texture:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Texture:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 2 ) ]
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "blink"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Texture:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true, false, true ]
+}
+
+[node name="TutorialGui" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ClickOnCustomer" type="Control" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -116.0
+margin_top = -534.0
+margin_right = -116.0
+margin_bottom = -534.0
+mouse_filter = 2
+
+[node name="Background" type="Panel" parent="ClickOnCustomer"]
+margin_left = 39.0
+margin_top = -7.0
+margin_right = 301.0
+margin_bottom = 65.0
+theme = ExtResource( 4 )
+
+[node name="Explanation" type="Label" parent="ClickOnCustomer"]
+margin_left = 41.0
+margin_right = 300.0
+margin_bottom = 62.0
+theme = ExtResource( 3 )
+text = "Click on a customer to interact"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="DownLeft" type="TextureRect" parent="ClickOnCustomer"]
+margin_left = -24.0
+margin_top = -80.0
+margin_right = 76.0
+margin_bottom = 20.0
+texture = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ClickOnCustomer"]
+anims/RESET = SubResource( 1 )
+anims/click = SubResource( 2 )
+
+[node name="CardFirstDisplay" type="Control" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.157
+anchor_right = 0.5
+anchor_bottom = 0.157
+margin_left = -79.0
+margin_top = 0.231995
+margin_right = -79.0
+margin_bottom = 0.231995
+mouse_filter = 2
+
+[node name="Background" type="Panel" parent="CardFirstDisplay"]
+margin_left = 2.0
+margin_top = -6.0
+margin_right = 341.0
+margin_bottom = 64.0
+theme = ExtResource( 4 )
+
+[node name="Explanation" type="Label" parent="CardFirstDisplay/Background"]
+margin_left = -2.0
+margin_top = 6.0
+margin_right = 336.0
+margin_bottom = 68.0
+theme = ExtResource( 3 )
+text = "Orders appear as cards in the cards menu"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="CardFirstDisplayButton" type="TextureButton" parent="CardFirstDisplay/Background"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -48.0
+margin_top = -42.0
+margin_right = 2.0
+margin_bottom = 8.0
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 10 )
+texture_hover = ExtResource( 9 )
+expand = true
+
+[node name="DownLeft" type="TextureRect" parent="CardFirstDisplay"]
+margin_left = -61.0
+margin_top = -80.0
+margin_right = 39.0
+margin_bottom = 20.0
+texture = ExtResource( 2 )
+
+[node name="CardExplanation" type="Control" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.157
+anchor_right = 0.5
+anchor_bottom = 0.157
+margin_left = -79.0
+margin_top = 0.231995
+margin_right = -79.0
+margin_bottom = 0.231995
+mouse_filter = 2
+
+[node name="Background" type="Panel" parent="CardExplanation"]
+margin_left = -1.0
+margin_top = -9.0
+margin_right = 338.0
+margin_bottom = 65.0
+theme = ExtResource( 4 )
+
+[node name="Explanation" type="Label" parent="CardExplanation/Background"]
+margin_left = 1.0
+margin_top = 9.0
+margin_right = 339.0
+margin_bottom = 71.0
+theme = ExtResource( 3 )
+text = "The card displays information about the order"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="CardExplanationButton" type="TextureButton" parent="CardExplanation/Background"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -48.0
+margin_top = -42.0
+margin_right = 2.0
+margin_bottom = 8.0
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 10 )
+texture_hover = ExtResource( 9 )
+expand = true
+
+[node name="CardExplanation2" type="Control" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.14
+anchor_right = 0.5
+anchor_bottom = 0.14
+margin_left = -162.0
+margin_top = -0.360001
+margin_right = -162.0
+margin_bottom = -0.360001
+mouse_filter = 2
+
+[node name="Background" type="Panel" parent="CardExplanation2"]
+margin_left = 80.0
+margin_top = -63.0
+margin_right = 276.0
+margin_bottom = 8.0
+theme = ExtResource( 4 )
+
+[node name="Explanation" type="Label" parent="CardExplanation2/Background"]
+margin_left = -72.0
+margin_top = -13.0
+margin_right = 266.0
+margin_bottom = 49.0
+theme = ExtResource( 3 )
+text = "Korban Category"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="CardExplanation2Button" type="TextureButton" parent="CardExplanation2/Background"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -48.0
+margin_top = -42.0
+margin_right = 2.0
+margin_bottom = 8.0
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 10 )
+texture_hover = ExtResource( 9 )
+expand = true
+
+[node name="DownLeft" type="TextureRect" parent="CardExplanation2"]
+margin_left = -24.0
+margin_top = -101.0
+margin_right = 76.0
+margin_bottom = -1.0
+texture = ExtResource( 2 )
+
+[node name="CardExplanation3" type="Control" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.171
+anchor_right = 0.5
+anchor_bottom = 0.171
+margin_left = -144.0
+margin_top = -0.104004
+margin_right = -144.0
+margin_bottom = -0.104004
+mouse_filter = 2
+
+[node name="Background" type="Panel" parent="CardExplanation3"]
+margin_left = 108.0
+margin_top = -69.0
+margin_right = 227.0
+margin_bottom = -2.0
+rect_pivot_offset = Vector2( -570, -84 )
+theme = ExtResource( 4 )
+
+[node name="Explanation" type="Label" parent="CardExplanation3/Background"]
+margin_left = -113.0
+margin_top = -13.0
+margin_right = 225.0
+margin_bottom = 49.0
+theme = ExtResource( 3 )
+text = "Occasion"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="CardExplanation3Button" type="TextureButton" parent="CardExplanation3/Background"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -48.0
+margin_top = -42.0
+margin_right = 2.0
+margin_bottom = 8.0
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 10 )
+texture_hover = ExtResource( 9 )
+expand = true
+
+[node name="DownLeft" type="TextureRect" parent="CardExplanation3"]
+margin_left = -23.0
+margin_top = -100.0
+margin_right = 77.0
+texture = ExtResource( 2 )
+
+[node name="CardExplanation4" type="Control" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.171
+anchor_right = 0.5
+anchor_bottom = 0.171
+margin_left = -144.0
+margin_top = -0.104004
+margin_right = -144.0
+margin_bottom = -0.104004
+mouse_filter = 2
+
+[node name="Background" type="Panel" parent="CardExplanation4"]
+margin_left = 64.0
+margin_top = -52.0
+margin_right = 389.0
+margin_bottom = 73.0
+theme = ExtResource( 4 )
+
+[node name="Explanation" type="Label" parent="CardExplanation4/Background"]
+margin_left = -7.0
+margin_right = 331.0
+margin_bottom = 124.0
+theme = ExtResource( 3 )
+text = "clicking on the card will display the order details."
+align = 1
+valign = 1
+autowrap = true
+
+[node name="CardExplanation4Button" type="TextureButton" parent="CardExplanation4/Background"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -48.0
+margin_top = -42.0
+margin_right = 2.0
+margin_bottom = 8.0
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 10 )
+texture_hover = ExtResource( 9 )
+expand = true
+
+[node name="CardExplanation5" type="Control" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.14
+anchor_right = 0.5
+anchor_bottom = 0.14
+margin_left = -141.0
+margin_top = -0.360001
+margin_right = -141.0
+margin_bottom = -0.360001
+mouse_filter = 2
+
+[node name="Background" type="Panel" parent="CardExplanation5"]
+margin_left = 50.0
+margin_top = -6.0
+margin_right = 398.0
+margin_bottom = 73.0
+theme = ExtResource( 4 )
+
+[node name="Explanation" type="Label" parent="CardExplanation5/Background"]
+margin_left = 4.0
+margin_top = 7.0
+margin_right = 342.0
+margin_bottom = 69.0
+theme = ExtResource( 3 )
+text = "click on the card to display the order details"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="DownLeft" type="TextureRect" parent="CardExplanation5"]
+margin_left = -24.0
+margin_top = -79.0
+margin_right = 76.0
+margin_bottom = 21.0
+texture = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CardExplanation5"]
+anims/RESET = SubResource( 3 )
+anims/click = SubResource( 4 )
+
+[node name="CardExplanation6" type="Control" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.14
+anchor_right = 0.5
+anchor_bottom = 0.14
+margin_left = -141.0
+margin_top = -0.360001
+margin_right = -141.0
+margin_bottom = -0.360001
+mouse_filter = 2
+
+[node name="Background" type="Panel" parent="CardExplanation6"]
+margin_left = 54.0
+margin_top = 2.0
+margin_right = 393.0
+margin_bottom = 125.0
+theme = ExtResource( 4 )
+
+[node name="Explanation" type="Label" parent="CardExplanation6/Background"]
+margin_top = -1.0
+margin_right = 338.0
+margin_bottom = 92.0
+theme = ExtResource( 3 )
+text = "You can view the korban type, and how many you need in order to complete the order"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="CardExplanation6Button" type="TextureButton" parent="CardExplanation6/Background"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -48.0
+margin_top = -42.0
+margin_right = 2.0
+margin_bottom = 8.0
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 10 )
+texture_hover = ExtResource( 9 )
+expand = true
+
+[node name="DownLeft" type="TextureRect" parent="CardExplanation6"]
+margin_left = -34.0
+margin_top = -98.0
+margin_right = 66.0
+margin_bottom = 2.0
+texture = ExtResource( 2 )
+
+[node name="ShopExplanation" type="Control" parent="."]
+visible = false
+anchor_left = 1.0
+anchor_top = 0.754
+anchor_right = 1.0
+anchor_bottom = 0.754
+margin_left = -510.0
+margin_top = -28.096
+margin_right = -510.0
+margin_bottom = -28.096
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="Panel" parent="ShopExplanation"]
+margin_left = 83.0
+margin_top = 11.0
+margin_right = 362.0
+margin_bottom = 53.0
+theme = ExtResource( 4 )
+
+[node name="Explanation" type="Label" parent="ShopExplanation"]
+margin_left = 54.0
+margin_top = 1.0
+margin_right = 392.0
+margin_bottom = 63.0
+theme = ExtResource( 3 )
+text = "click on the shop button"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Texture" type="TextureRect" parent="ShopExplanation"]
+margin_left = 325.0
+margin_top = -74.0
+margin_right = 425.0
+margin_bottom = 26.0
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ShopExplanation"]
+anims/RESET = SubResource( 5 )
+anims/click = SubResource( 6 )
+
+[node name="ShopExplanation2" type="Control" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.14
+anchor_right = 0.5
+anchor_bottom = 0.14
+margin_left = -141.0
+margin_top = -0.360001
+margin_right = -141.0
+margin_bottom = -0.360001
+mouse_filter = 2
+
+[node name="Background" type="Panel" parent="ShopExplanation2"]
+margin_left = 3.0
+margin_top = 224.0
+margin_right = 342.0
+margin_bottom = 293.0
+theme = ExtResource( 4 )
+
+[node name="Explanation" type="Label" parent="ShopExplanation2/Background"]
+margin_left = -2.0
+margin_top = 5.0
+margin_right = 336.0
+margin_bottom = 67.0
+theme = ExtResource( 3 )
+text = "Click once to add 1 to \"Bull\""
+align = 1
+valign = 1
+autowrap = true
+
+[node name="DownLeft" type="TextureRect" parent="ShopExplanation2"]
+margin_left = 266.0
+margin_top = 40.0
+margin_right = 366.0
+margin_bottom = 140.0
+texture = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ShopExplanation2"]
+anims/RESET = SubResource( 7 )
+anims/click = SubResource( 8 )
+
+[node name="ShopExplanation3" type="Control" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -78.0
+margin_top = -563.0
+margin_right = -78.0
+margin_bottom = -563.0
+mouse_filter = 2
+
+[node name="Background" type="Panel" parent="ShopExplanation3"]
+margin_left = -60.0
+margin_top = -212.0
+margin_right = 279.0
+margin_bottom = -78.0
+theme = ExtResource( 4 )
+
+[node name="Explanation" type="Label" parent="ShopExplanation3/Background"]
+margin_left = 1.0
+margin_top = 9.0
+margin_right = 339.0
+margin_bottom = 102.0
+theme = ExtResource( 3 )
+text = "if your order does not match the customers order, you will have to remake a new order"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="ShopExplanation3Button" type="TextureButton" parent="ShopExplanation3/Background"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -48.0
+margin_top = -42.0
+margin_right = 2.0
+margin_bottom = 8.0
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 10 )
+texture_hover = ExtResource( 9 )
+expand = true
+
+[node name="ShopExplanation4" type="Control" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -111.0
+margin_top = -222.0
+margin_right = -111.0
+margin_bottom = -222.0
+mouse_filter = 2
+
+[node name="Background" type="Panel" parent="ShopExplanation4"]
+margin_left = -34.0
+margin_top = -160.0
+margin_right = 284.0
+margin_bottom = -61.0
+theme = ExtResource( 4 )
+
+[node name="Explanation" type="Label" parent="ShopExplanation4/Background"]
+margin_left = -9.0
+margin_top = 4.0
+margin_right = 329.0
+margin_bottom = 97.0
+theme = ExtResource( 3 )
+text = "if you are satisfied with the order click on \"complete order"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="DownLeft" type="TextureRect" parent="ShopExplanation4"]
+margin_left = 120.0
+margin_top = 7.0
+margin_right = 220.002
+margin_bottom = 107.0
+texture = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ShopExplanation4"]
+anims/RESET = SubResource( 9 )
+anims/click = SubResource( 10 )
+
+[node name="GuiExplanation" type="Control" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.268
+anchor_right = 0.5
+anchor_bottom = 0.268
+margin_left = -300.0
+margin_top = -0.432007
+margin_right = -300.0
+margin_bottom = -0.432007
+mouse_filter = 2
+
+[node name="Background" type="Panel" parent="GuiExplanation"]
+margin_left = 133.0
+margin_top = 186.0
+margin_right = 456.0
+margin_bottom = 278.0
+theme = ExtResource( 4 )
+
+[node name="Explanation" type="Label" parent="GuiExplanation/Background"]
+margin_left = -8.0
+margin_top = -2.0
+margin_right = 330.0
+margin_bottom = 91.0
+theme = ExtResource( 3 )
+text = "once you reach the point threshold, you complete the level"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="GuiExplanationButton" type="TextureButton" parent="GuiExplanation/Background"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -48.0
+margin_top = -42.0
+margin_right = 2.0
+margin_bottom = 8.0
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 10 )
+texture_hover = ExtResource( 9 )
+expand = true
+
+[node name="Texture" type="TextureRect" parent="GuiExplanation"]
+margin_left = 222.0
+margin_top = 59.0
+margin_right = 322.002
+margin_bottom = 159.0
+texture = ExtResource( 2 )
+flip_h = true
+flip_v = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GuiExplanation"]
+anims/RESET = SubResource( 11 )
+anims/blink = SubResource( 12 )
+
+[node name="GuiExplanation2" type="Control" parent="."]
+visible = false
+anchor_top = 0.268
+anchor_bottom = 0.268
+margin_top = -0.432007
+margin_bottom = -0.432007
+mouse_filter = 2
+
+[node name="Background" type="Panel" parent="GuiExplanation2"]
+margin_left = 156.0
+margin_top = 184.0
+margin_right = 476.0
+margin_bottom = 256.0
+theme = ExtResource( 4 )
+
+[node name="Explanation" type="Label" parent="GuiExplanation2/Background"]
+margin_left = -9.0
+margin_top = -10.0
+margin_right = 329.0
+margin_bottom = 83.0
+theme = ExtResource( 3 )
+text = "when the time runs out, you fail the level"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="GuiExplanation2Button" type="TextureButton" parent="GuiExplanation2/Background"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -48.0
+margin_top = -42.0
+margin_right = 2.0
+margin_bottom = 8.0
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 10 )
+texture_hover = ExtResource( 9 )
+expand = true
+
+[node name="Texture" type="TextureRect" parent="GuiExplanation2"]
+margin_left = 131.0
+margin_top = 57.0
+margin_right = 231.002
+margin_bottom = 157.0
+texture = ExtResource( 2 )
+flip_v = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GuiExplanation2"]
+anims/RESET = SubResource( 13 )
+anims/blink = SubResource( 14 )
+
+[connection signal="pressed" from="CardFirstDisplay/Background/CardFirstDisplayButton" to="." method="_on_CardFirstDisplayButton_pressed"]
+[connection signal="pressed" from="CardExplanation/Background/CardExplanationButton" to="." method="_on_CardExplanationButton_pressed"]
+[connection signal="pressed" from="CardExplanation2/Background/CardExplanation2Button" to="." method="_on_CardExplanation2Button_pressed"]
+[connection signal="pressed" from="CardExplanation3/Background/CardExplanation3Button" to="." method="_on_CardExplanation3Button_pressed"]
+[connection signal="pressed" from="CardExplanation4/Background/CardExplanation4Button" to="." method="_on_CardExplanation4Button_pressed"]
+[connection signal="pressed" from="CardExplanation6/Background/CardExplanation6Button" to="." method="_on_CardExplanation6Button_pressed"]
+[connection signal="pressed" from="ShopExplanation3/Background/ShopExplanation3Button" to="." method="_on_ShopExplanation3Button_pressed"]
+[connection signal="pressed" from="GuiExplanation/Background/GuiExplanationButton" to="." method="_on_GuiExplanationButton_pressed"]
+[connection signal="pressed" from="GuiExplanation2/Background/GuiExplanation2Button" to="." method="_on_GuiExplanation2Button_pressed"]

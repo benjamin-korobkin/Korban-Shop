@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/levelCompleted.ogg-40a19ca6ecc845513569c766bd3f94cf.oggstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Sfx/levelCompleted.ogg"
+dest_files=[ "res://.import/levelCompleted.ogg-40a19ca6ecc845513569c766bd3f94cf.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

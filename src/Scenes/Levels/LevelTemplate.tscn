@@ -1,0 +1,225 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://src/Scenes/TileMaps/Floors.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/scripts/Level.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Sprites/TileMaps/table_right.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Sprites/TileMaps/table_mid.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Sprites/TileMaps/table_left.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Sprites/Characters/manBlue_stand.png" type="Texture" id=6]
+[ext_resource path="res://src/scripts/Gui/CustomersArea.gd" type="Script" id=7]
+[ext_resource path="res://Assets/Sprites/Characters/all_characters_sheet.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Sprites/objects/korbanBox.png" type="Texture" id=9]
+[ext_resource path="res://src/Scenes/CanvasItems/CrowdCanvas.tres" type="Material" id=10]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0, 0.048913, 0.913043, 1 )
+colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="TileSet" id=2]
+0/name = "table_left.png 0"
+0/texture = ExtResource( 5 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 64, 64 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "table_mid.png 1"
+1/texture = ExtResource( 4 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 64, 64 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+2/name = "table_right.png 2"
+2/texture = ExtResource( 3 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 0, 0, 64, 64 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
+
+[node name="LevelTemplate" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource( 2 )
+
+[node name="Background" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Floors" parent="Background" instance=ExtResource( 1 )]
+
+[node name="CustomersArea" type="Control" parent="."]
+anchor_left = 0.498
+anchor_top = 1.0
+anchor_right = 0.498
+anchor_bottom = 1.0
+margin_left = -298.8
+margin_top = -720.0
+margin_right = 299.2
+margin_bottom = -446.0
+mouse_filter = 2
+script = ExtResource( 7 )
+
+[node name="CustomersPositionsArea" type="Control" parent="."]
+anchor_left = 0.498
+anchor_top = 1.0
+anchor_right = 0.498
+anchor_bottom = 1.0
+margin_left = -298.8
+margin_top = -720.0
+margin_right = 299.2
+margin_bottom = -446.0
+mouse_filter = 2
+
+[node name="Pos1" type="Position2D" parent="CustomersPositionsArea"]
+position = Vector2( 150, 221 )
+
+[node name="Pos2" type="Position2D" parent="CustomersPositionsArea"]
+position = Vector2( 398, 223 )
+
+[node name="Pos3" type="Position2D" parent="CustomersPositionsArea"]
+position = Vector2( 480, 154 )
+
+[node name="Pos4" type="Position2D" parent="CustomersPositionsArea"]
+position = Vector2( 275, 135 )
+
+[node name="CustomerOrderPos" type="Position2D" parent="CustomersPositionsArea"]
+position = Vector2( 300, 251 )
+
+[node name="outOfBoundsPosLeft" type="Position2D" parent="CustomersPositionsArea"]
+position = Vector2( -334, 47 )
+
+[node name="outOfBoundsPosRight" type="Position2D" parent="CustomersPositionsArea"]
+position = Vector2( 840, 47 )
+
+[node name="CrowdArea2" type="Control" parent="."]
+anchor_top = 0.35
+anchor_bottom = 0.35
+margin_top = -54.4
+margin_right = 598.0
+margin_bottom = 54.6
+mouse_filter = 2
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="CrowdArea2"]
+material = ExtResource( 10 )
+position = Vector2( 0, 51 )
+rotation = -1.5708
+lifetime = 10.0
+texture = ExtResource( 8 )
+emission_shape = 2
+emission_rect_extents = Vector2( 40, 0 )
+gravity = Vector2( 0, 50 )
+color_ramp = SubResource( 1 )
+anim_offset = 1.0
+anim_offset_random = 1.0
+
+[node name="CrowdArea3" type="Control" parent="."]
+anchor_left = 0.997
+anchor_top = 0.35
+anchor_right = 0.997
+anchor_bottom = 0.35
+margin_left = -598.2
+margin_top = -54.4
+margin_right = -0.200012
+margin_bottom = 54.6
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="CrowdArea3"]
+material = ExtResource( 10 )
+position = Vector2( 600, 51 )
+rotation = 1.5708
+lifetime = 10.0
+texture = ExtResource( 8 )
+emission_shape = 2
+emission_rect_extents = Vector2( 40, 0 )
+gravity = Vector2( 0, 50 )
+color_ramp = SubResource( 1 )
+anim_offset = 1.0
+anim_offset_random = 1.0
+
+[node name="CountersControl" type="Control" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="TileMap2" type="TileMap" parent="CountersControl"]
+z_index = -1
+tile_set = SubResource( 2 )
+format = 1
+tile_data = PoolIntArray( -393286, 1, 0, -393285, 1, 0, -393284, 1, 0, -393283, 1, 0, -393282, 1, 0, -393281, 1, 0, -393280, 1, 0, -393279, 1, 0, -393278, 1, 0, -393277, 1, 0, -393276, 1, 0, -393275, 1, 0, -393274, 1, 0, -393273, 1, 0, -393272, 1, 0, -393271, 1, 0, -393270, 1, 0, -393269, 1, 0, -393268, 1, 0, -393267, 1, 0, -393266, 1, 0, -393265, 1, 0, -393264, 1, 0, -393263, 1, 0, -393262, 1, 0, -393261, 1, 0, -393260, 1, 0, -393259, 1, 0, -393258, 1, 0, -393257, 1, 0, -393256, 1, 0, -393255, 1, 0, -393254, 1, 0, -393253, 1, 0, -393252, 1, 0, -393251, 1, 0, -393250, 1, 0, -393249, 1, 0, -393248, 1, 0, -393247, 1, 0, -393246, 1, 0, -393245, 1, 0, -393244, 1, 0, -393243, 1, 0, -393242, 1, 0, -393241, 1, 0, -393240, 1, 0, -393239, 1, 0, -393238, 1, 0, -393237, 1, 0, -393236, 1, 0, -393235, 1, 0, -393234, 1, 0, -393233, 1, 0, -393232, 1, 0, -393231, 1, 0, -393230, 1, 0, -393229, 1, 0, -393228, 1, 0, -393227, 1, 0, -393226, 1, 0, -393225, 1, 0, -393224, 1, 0, -393223, 1, 0, -393222, 1, 0, -393221, 1, 0, -393220, 1, 0, -393219, 1, 0, -393218, 1, 0, -393217, 1, 0, -458752, 1, 0, -458751, 1, 0, -458750, 1, 0, -458749, 1, 0, -458748, 1, 0, -458747, 1, 0, -458746, 1, 0, -458745, 1, 0, -458744, 1, 0, -458743, 1, 0, -458742, 1, 0, -458741, 1, 0, -458740, 1, 0, -458739, 1, 0, -458738, 1, 0, -458737, 1, 0, -458736, 1, 0, -458735, 1, 0, -458734, 1, 0, -458733, 1, 0, -458732, 1, 0, -458731, 1, 0, -458730, 1, 0, -458729, 1, 0, -458728, 1, 0, -458727, 1, 0, -458726, 1, 0, -458725, 1, 0, -458724, 1, 0, -458723, 1, 0, -458722, 1, 0, -458721, 1, 0, -458720, 1, 0, -458719, 1, 0, -458718, 1, 0, -458717, 1, 0, -458716, 1, 0, -458715, 1, 0, -458714, 1, 0, -458713, 1, 0, -458712, 1, 0, -458711, 1, 0, -458710, 1, 0, -458709, 1, 0, -458708, 1, 0, -458707, 1, 0, -458706, 1, 0, -458705, 1, 0, -458704, 1, 0, -458703, 1, 0, -458702, 1, 0, -458701, 1, 0, -458700, 1, 0, -458699, 1, 0, -458698, 1, 0, -458697, 1, 0, -458696, 1, 0, -458695, 1, 0, -458694, 1, 0, -458693, 1, 0, -458692, 1, 0, -458691, 1, 0, -458690, 1, 0, -458689, 1, 0, -458688, 1, 0, -458687, 1, 0, -458686, 1, 0, -458685, 1, 0, -458684, 1, 0, -458683, 1, 0, -458682, 1, 0, -458681, 1, 0, -458680, 1, 0, -458679, 1, 0, -458678, 1, 0, -458677, 1, 0, -458676, 1, 0, -458675, 1, 0, -458674, 1, 0, -458673, 1, 0, -458672, 1, 0, -458671, 1, 0, -458670, 1, 0, -458669, 1, 0, -70, 1, 0, -69, 1, 0, -68, 1, 0, -67, 1, 0, -66, 1, 0, -65, 1, 0, -64, 1, 0, -63, 1, 0, -62, 1, 0, -61, 1, 0, -60, 1, 0, -59, 1, 0, -58, 1, 0, -57, 1, 0, -56, 1, 0, -55, 1, 0, -54, 1, 0, -53, 1, 0, -52, 1, 0, -51, 1, 0, -50, 1, 0, -49, 1, 0, -48, 1, 0, -47, 1, 0, -46, 1, 0, -45, 1, 0, -44, 1, 0, -43, 1, 0, -42, 1, 0, -41, 1, 0, -40, 1, 0, -39, 1, 0, -38, 1, 0, -37, 1, 0, -36, 1, 0, -35, 1, 0, -34, 1, 0, -33, 1, 0, -32, 1, 0, -31, 1, 0, -30, 1, 0, -29, 1, 0, -28, 1, 0, -27, 1, 0, -26, 1, 0, -25, 1, 0, -24, 1, 0, -23, 1, 0, -22, 1, 0, -21, 1, 0, -20, 1, 0, -19, 1, 0, -18, 1, 0, -17, 1, 0, -16, 1, 0, -15, 1, 0, -14, 1, 0, -13, 1, 0, -12, 1, 0, -11, 1, 0, -10, 1, 0, -9, 1, 0, -8, 1, 0, -7, 1, 0, -6, 1, 0, -5, 1, 0, -4, 1, 0, -3, 1, 0, -2, 1, 0, -1, 1, 0, -65536, 1, 0, -65535, 1, 0, -65534, 1, 0, -65533, 1, 0, -65532, 1, 0, -65531, 1, 0, -65530, 1, 0, -65529, 1, 0, -65528, 1, 0, -65527, 1, 0, -65526, 1, 0, -65525, 1, 0, -65524, 1, 0, -65523, 1, 0, -65522, 1, 0, -65521, 1, 0, -65520, 1, 0, -65519, 1, 0, -65518, 1, 0, -65517, 1, 0, -65516, 1, 0, -65515, 1, 0, -65514, 1, 0, -65513, 1, 0, -65512, 1, 0, -65511, 1, 0, -65510, 1, 0, -65509, 1, 0, -65508, 1, 0, -65507, 1, 0, -65506, 1, 0, -65505, 1, 0, -65504, 1, 0, -65503, 1, 0, -65502, 1, 0, -65501, 1, 0, -65500, 1, 0, -65499, 1, 0, -65498, 1, 0, -65497, 1, 0, -65496, 1, 0, -65495, 1, 0, -65494, 1, 0, -65493, 1, 0, -65492, 1, 0, -65491, 1, 0, -65490, 1, 0, -65489, 1, 0, -65488, 1, 0, -65487, 1, 0, -65486, 1, 0, -65485, 1, 0, -65484, 1, 0, -65483, 1, 0, -65482, 1, 0, -65481, 1, 0, -65480, 1, 0, -65479, 1, 0, -65478, 1, 0, -65477, 1, 0, -65476, 1, 0, -65475, 1, 0, -65474, 1, 0, -65473, 1, 0, -65472, 1, 0, -65471, 1, 0, -65470, 1, 0, -65469, 1, 0, -65468, 1, 0, -65467, 1, 0, -65466, 1, 0, -65465, 1, 0, -65464, 1, 0, -65463, 1, 0, -65462, 1, 0, -65461, 1, 0, -65460, 1, 0, -65459, 1, 0, -65458, 1, 0, -65457, 1, 0, -65456, 1, 0, -65455, 1, 0, -65454, 1, 0, -65453, 1, 0 )
+
+[node name="KorbanBox" type="TextureRect" parent="CountersControl"]
+visible = false
+anchor_left = 0.502
+anchor_right = 0.502
+margin_left = -11.2
+margin_top = -49.0
+margin_right = 10.8
+margin_bottom = -27.0
+texture = ExtResource( 9 )
+
+[node name="PlayerArea" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -300.0
+margin_top = -388.0
+margin_right = 300.0
+margin_bottom = -63.0
+mouse_filter = 2
+
+[node name="Player" type="Sprite" parent="PlayerArea"]
+position = Vector2( 300, 28 )
+rotation = 3.14159
+texture = ExtResource( 6 )
+
+[node name="Tween" type="Tween" parent="PlayerArea/Player"]
+
+[node name="Box" type="Sprite" parent="PlayerArea/Player"]
+visible = false
+position = Vector2( -6.10352e-05, 25 )
+texture = ExtResource( 9 )
+
+[node name="OrderCounterPos" type="Position2D" parent="PlayerArea"]
+position = Vector2( 300, 307 )
+
+[node name="ShopCounterPos" type="Position2D" parent="PlayerArea"]
+position = Vector2( 300, 28 )
+
+[node name="CustomerSpawner" type="Timer" parent="."]
+autostart = true
+
+[connection signal="tween_completed" from="PlayerArea/Player/Tween" to="." method="_on_Tween_tween_completed"]
+[connection signal="timeout" from="CustomerSpawner" to="." method="_on_CustomerSpawner_timeout"]

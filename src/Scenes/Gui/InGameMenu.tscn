@@ -1,0 +1,153 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Sprites/Gui/Icons/White/2x/musicOn.png" type="Texture" id=1]
+[ext_resource path="res://src/scripts/Gui/IngameMenu.gd" type="Script" id=2]
+[ext_resource path="res://src/Scenes/Gui/Themes/MenusTheme.tres" type="Theme" id=3]
+
+[node name="InGameMenu" type="Control"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+theme = ExtResource( 3 )
+script = ExtResource( 2 )
+
+[node name="InGameMenuControl" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="InGameMenuVBox" type="VBoxContainer" parent="InGameMenuControl"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="InGameMenuHBox" type="HBoxContainer" parent="InGameMenuControl/InGameMenuVBox"]
+margin_right = 600.0
+margin_bottom = 860.0
+alignment = 1
+
+[node name="InGameMenu" type="VBoxContainer" parent="InGameMenuControl/InGameMenuVBox/InGameMenuHBox"]
+margin_left = 92.0
+margin_right = 507.0
+margin_bottom = 860.0
+
+[node name="MarginContainer" type="MarginContainer" parent="InGameMenuControl/InGameMenuVBox/InGameMenuHBox/InGameMenu"]
+margin_right = 415.0
+margin_bottom = 113.0
+rect_min_size = Vector2( 0, 113 )
+
+[node name="Title" type="Label" parent="InGameMenuControl/InGameMenuVBox/InGameMenuHBox/InGameMenu"]
+margin_top = 117.0
+margin_right = 415.0
+margin_bottom = 206.0
+text = "Menu"
+align = 1
+valign = 1
+
+[node name="MarginContainer4" type="MarginContainer" parent="InGameMenuControl/InGameMenuVBox/InGameMenuHBox/InGameMenu"]
+margin_top = 210.0
+margin_right = 415.0
+margin_bottom = 343.0
+rect_min_size = Vector2( 0, 133 )
+
+[node name="ContinueGameButton" type="Button" parent="InGameMenuControl/InGameMenuVBox/InGameMenuHBox/InGameMenu"]
+margin_top = 347.0
+margin_right = 415.0
+margin_bottom = 424.0
+focus_mode = 0
+text = "Continue"
+
+[node name="MarginContainer2" type="MarginContainer" parent="InGameMenuControl/InGameMenuVBox/InGameMenuHBox/InGameMenu"]
+margin_top = 428.0
+margin_right = 415.0
+margin_bottom = 561.0
+rect_min_size = Vector2( 0, 133 )
+
+[node name="OptinsButton" type="Button" parent="InGameMenuControl/InGameMenuVBox/InGameMenuHBox/InGameMenu"]
+margin_top = 565.0
+margin_right = 415.0
+margin_bottom = 642.0
+focus_mode = 0
+text = "Options"
+
+[node name="MarginContainer3" type="MarginContainer" parent="InGameMenuControl/InGameMenuVBox/InGameMenuHBox/InGameMenu"]
+margin_top = 646.0
+margin_right = 415.0
+margin_bottom = 779.0
+rect_min_size = Vector2( 0, 133 )
+
+[node name="CloseGameButton" type="Button" parent="InGameMenuControl/InGameMenuVBox/InGameMenuHBox/InGameMenu"]
+margin_top = 783.0
+margin_right = 415.0
+margin_bottom = 860.0
+focus_mode = 0
+text = "Close Game"
+
+[node name="OptionsMenuVBox" type="VBoxContainer" parent="InGameMenuControl"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="MenuHBox" type="HBoxContainer" parent="InGameMenuControl/OptionsMenuVBox"]
+margin_right = 600.0
+margin_bottom = 892.0
+alignment = 1
+
+[node name="OptionsMenu" type="VBoxContainer" parent="InGameMenuControl/OptionsMenuVBox/MenuHBox"]
+margin_left = 138.0
+margin_right = 461.0
+margin_bottom = 892.0
+
+[node name="MarginContainer" type="MarginContainer" parent="InGameMenuControl/OptionsMenuVBox/MenuHBox/OptionsMenu"]
+margin_right = 323.0
+margin_bottom = 113.0
+rect_min_size = Vector2( 0, 113 )
+
+[node name="Title" type="Label" parent="InGameMenuControl/OptionsMenuVBox/MenuHBox/OptionsMenu"]
+margin_top = 117.0
+margin_right = 323.0
+margin_bottom = 295.0
+text = "Options
+"
+align = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="InGameMenuControl/OptionsMenuVBox/MenuHBox/OptionsMenu"]
+margin_top = 299.0
+margin_right = 323.0
+margin_bottom = 399.0
+
+[node name="MusicButton" type="Button" parent="InGameMenuControl/OptionsMenuVBox/MenuHBox/OptionsMenu/HBoxContainer"]
+margin_right = 219.0
+margin_bottom = 100.0
+toggle_mode = true
+text = "Music"
+
+[node name="Icon" type="TextureRect" parent="InGameMenuControl/OptionsMenuVBox/MenuHBox/OptionsMenu/HBoxContainer"]
+margin_left = 223.0
+margin_right = 323.0
+margin_bottom = 100.0
+texture = ExtResource( 1 )
+
+[node name="MarginContainer2" type="MarginContainer" parent="InGameMenuControl/OptionsMenuVBox/MenuHBox/OptionsMenu"]
+margin_top = 403.0
+margin_right = 323.0
+margin_bottom = 516.0
+rect_min_size = Vector2( 0, 113 )
+
+[node name="MarginContainer3" type="MarginContainer" parent="InGameMenuControl/OptionsMenuVBox/MenuHBox/OptionsMenu"]
+margin_top = 520.0
+margin_right = 323.0
+margin_bottom = 811.0
+rect_min_size = Vector2( 0, 291 )
+
+[node name="OptionsBackToMenuButton" type="Button" parent="InGameMenuControl/OptionsMenuVBox/MenuHBox/OptionsMenu"]
+margin_top = 815.0
+margin_right = 323.0
+margin_bottom = 892.0
+text = "Back"
+
+[connection signal="pressed" from="InGameMenuControl/InGameMenuVBox/InGameMenuHBox/InGameMenu/ContinueGameButton" to="." method="_on_ContinueGameButton_pressed"]
+[connection signal="pressed" from="InGameMenuControl/InGameMenuVBox/InGameMenuHBox/InGameMenu/OptinsButton" to="." method="_on_OptinsButton_pressed"]
+[connection signal="pressed" from="InGameMenuControl/InGameMenuVBox/InGameMenuHBox/InGameMenu/CloseGameButton" to="." method="_on_CloseGameButton_pressed"]
+[connection signal="toggled" from="InGameMenuControl/OptionsMenuVBox/MenuHBox/OptionsMenu/HBoxContainer/MusicButton" to="." method="_on_MusicButton_toggled"]
+[connection signal="pressed" from="InGameMenuControl/OptionsMenuVBox/MenuHBox/OptionsMenu/OptionsBackToMenuButton" to="." method="_on_OptionsBackToMenuButton_pressed"]
