@@ -16,7 +16,7 @@ var pressedOnce : bool = false
 
 
 
-const FLIP_TIME : float = 0.5
+const FLIP_TIME : float = 0.4
 const HIGHLIGHT_COLOR = Color.yellow#light blue#Color(0.568627, 0.921569, 0.956863)
 const OPAQUE : Color = Color(1,1,1,1)
 const TRANSPARENT : Color = Color(1,1,1,0)
@@ -46,8 +46,9 @@ func _on_CardButton_pressed():
 	if occasion.modulate == OPAQUE:
 		tween.interpolate_property(occasion,"modulate",OPAQUE,TRANSPARENT,FLIP_TIME,Tween.TRANS_CUBIC,Tween.EASE_IN)
 		tween.start()
-		if !pressedOnce:
+		if !pressedOnce: 
 			pressedOnce = true
+			# Get no points if card was flipped
 			connect("decreaseScore",customerNodePath,"activate_score_decrease",[],CONNECT_ONESHOT)
 			emit_signal("decreaseScore")
 	else:

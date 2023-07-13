@@ -157,6 +157,9 @@ anchor_bottom = 0.268
 margin_top = -0.432007
 margin_bottom = 132.568
 script = ExtResource( 43 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="TimerTextureProgress" type="TextureProgress" parent="GuiSafeArea/LevelGui/PointsTimerMenu"]
 pause_mode = 1
@@ -210,7 +213,10 @@ margin_top = 33.0
 margin_right = 176.0
 margin_bottom = 75.0
 theme = ExtResource( 39 )
-text = "10000/10000"
+text = "10/10"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="PointsTween" type="Tween" parent="GuiSafeArea/LevelGui/PointsTimerMenu"]
 

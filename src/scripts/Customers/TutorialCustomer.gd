@@ -25,8 +25,8 @@ onready var pointsCalculationDict : Dictionary = {
 	"nice" : 1.0,
 	"bad" : 1.0,
 }
-var orderPoints : int = 100
-var points : int = 0
+var CORRECT_ORDER_POINTS : float = 100.0
+var points : float = 0.0
 
 signal clickOnCutsomer
 
@@ -181,13 +181,13 @@ func walk_out_of_bounds():
 
 func calculate_points():
 	if pointsTimer.time_left < originalTimeLeft * pointsCalculationDict["bad"]:
-		points = orderPoints * pointsCalculationDict["bad"]
+		points = CORRECT_ORDER_POINTS * pointsCalculationDict["bad"]
 	elif pointsTimer.time_left <= originalTimeLeft * pointsCalculationDict["nice"]:
-		points = orderPoints * pointsCalculationDict["nice"]
+		points = CORRECT_ORDER_POINTS * pointsCalculationDict["nice"]
 	elif pointsTimer.time_left <= originalTimeLeft * pointsCalculationDict["good"] :
-		points = orderPoints * pointsCalculationDict["good"]
+		points = CORRECT_ORDER_POINTS * pointsCalculationDict["good"]
 	elif pointsTimer.time_left >= originalTimeLeft:
-		points = orderPoints * pointsCalculationDict["perfect"]
+		points = CORRECT_ORDER_POINTS * pointsCalculationDict["perfect"]
 	
 	emit_signal("addPoints",points)
 	

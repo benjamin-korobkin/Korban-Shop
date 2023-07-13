@@ -17,7 +17,10 @@ onready var orderDict : Dictionary
 onready var occasion : String
 onready var category : String
 
-const SCORE_DECREASE : float = 0.5
+const ZERO : float = 0.0
+const MINUS_POINTS : float = -333.0
+const CORRECT_ORDER_POINTS : float = 110.0
+
 onready var decreaseScore : bool = false
 
 var originalTimeLeft : int = 60
@@ -27,9 +30,8 @@ onready var pointsCalculationDict : Dictionary = {
 	"nice" : 1.0,
 	"bad" : 1.0,
 }
-var orderPoints : int = 100
-var points : int = 0
-var successiveOrdersDone = 0
+var points : float = ZERO
+#var successiveOrdersDone = 0
 
 signal setCard
 signal handleHighlights
@@ -37,7 +39,7 @@ signal handleCardHighlights
 signal showCard
 signal spawnCustomer
 signal addPoints
-signal addOrderDone
+#signal addOrderDone
 
 onready var orderCompleted : bool = false
 onready var walkingTowardsStartingPoint : bool = true
@@ -60,14 +62,11 @@ func _ready():
 	connect("spawnCustomer",levelNode,"spawn_customer")
 	connect("handleOrdersMenuButton",levelGui,"handle_orders_menu_button")
 	connect("addPoints",pointsTimerMenuNode,"add_points")
-
+	
 #applies random texture from animatedsprite
 func apply_texture(gender : String):
 	randNumGenerator.randomize()
-	if gender == "male":
-		animatedSprite.animation = "male"
-	else:
-		animatedSprite.animation = "female"
+	animatedSprite.animation = "male"
 	var randomTexture = randNumGenerator.randi_range(0,animatedSprite.frames.get_frame_count(gender) -1)
 
 	animatedSprite.frame = randomTexture
@@ -123,7 +122,7 @@ func remove_highlight():
 		tween.interpolate_property(self,"position",position,waitingPos,1,Tween.TRANS_LINEAR,Tween.EASE_IN)
 		tween.start()
 
-#checks if order compelete, then queues free, else shows card.
+#checks if order complete, then queues free, else shows card.
 func _on_Tween_tween_completed(object, key):
 	if orderCompleted:
 		queue_free()
@@ -156,6 +155,7 @@ func check_order_condition(isOrderComplete):
 		emit_signal("handleBoxSprite",false)
 		Sounds.play_sound("error","Sfx2")
 		emit_signal("handleOrdersMenuButton",false)
+		emit_signal("addPoints",MINUS_POINTS)
 	display_gui()
 
 #displays gui
@@ -187,21 +187,22 @@ func walk_out_of_bounds():
 
 
 func calculate_points():
-	if pointsTimer.time_left < originalTimeLeft * pointsCalculationDict["bad"]:
-		points = orderPoints * pointsCalculationDict["bad"]
-	elif pointsTimer.time_left <= originalTimeLeft * pointsCalculationDict["nice"]:
-		points = orderPoints * pointsCalculationDict["nice"]
-	elif pointsTimer.time_left <= originalTimeLeft * pointsCalculationDict["good"] :
-		points = orderPoints * pointsCalculationDict["good"]
-	elif pointsTimer.time_left >= originalTimeLeft:
-		points = orderPoints * pointsCalculationDict["perfect"]
-
-	decrease_score()
-	emit_signal("addPoints",points)
-
-func decrease_score():
 	if decreaseScore:
-		points *= SCORE_DECREASE
+		points = ZERO
+	else:
+		points = CORRECT_ORDER_POINTS
+	emit_signal("addPoints",points)
 
 func activate_score_decrease():
 	decreaseScore = true
+
+
+# Formerly part of calculate_points()
+#if pointsTimer.time_left < originalTimeLeft * pointsCalculationDict["bad"]:
+#		points = CORRECT_ORDER_POINTS * pointsCalculationDict["bad"]
+#	elif pointsTimer.time_left <= originalTimeLeft * pointsCalculationDict["nice"]:
+#		points = CORRECT_ORDER_POINTS * pointsCalculationDict["nice"]
+#	elif pointsTimer.time_left <= originalTimeLeft * pointsCalculationDict["good"] :
+#		points = CORRECT_ORDER_POINTS * pointsCalculationDict["good"]
+#	elif pointsTimer.time_left >= originalTimeLeft:
+#		points = CORRECT_ORDER_POINTS * pointsCalculationDict["perfect"]

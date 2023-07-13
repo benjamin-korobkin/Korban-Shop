@@ -12,7 +12,7 @@ onready var positionName
 onready var customerNodePath
 onready var cardsMenu = get_parent()
 onready var levelGui = get_node("/root/Game/GuiSafeArea/LevelGui")
-const FLIP_TIME : float = 0.5
+const FLIP_TIME : float = 0.4
 const HIGHLIGHT_COLOR = Color.yellow#light blue#Color(0.568627, 0.921569, 0.956863)
 const OPAQUE : Color = Color(1,1,1,1)
 const TRANSPARENT : Color = Color(1,1,1,0)

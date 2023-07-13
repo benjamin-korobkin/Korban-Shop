@@ -9,7 +9,7 @@ onready var pointsTween = $PointsTween
 onready var minutes
 onready var seconds
 onready var timeLeft
-onready var points : float = 0.0
+onready var points : float = 0
 onready var levelPointTreshold : int
 var pointsTweenActive : bool = false
 signal levelFailed
@@ -25,7 +25,7 @@ func _ready():
 #sets timer and points when level is loaded
 func set_timer_and_points(_timeLeft,_points):
 	get_tree().paused = false
-	points = 0.0
+	points = 0
 	levelPointTreshold = _points
 	timerTextureProgress.max_value = _timeLeft
 	timerTextureProgress.value = _timeLeft
@@ -42,6 +42,7 @@ func set_timer_and_points(_timeLeft,_points):
 func _physics_process(delta):
 	if pointsTweenActive:
 		pointsLabel.text = str(int(ceil(points))) + "/" + str(int(levelPointTreshold))
+		#print("score is: " + pointsLabel.text)
 		check_score()
 	seconds-= delta
 	timeLeft -= delta
@@ -59,7 +60,8 @@ func _physics_process(delta):
 
 #updates points, parameter recieved from customer.
 func add_points(_points):
-	pointsTween.interpolate_property(self,"points",points,points+_points,1.0,Tween.TRANS_LINEAR,Tween.EASE_IN_OUT)
+	var totalPoints = max(points + _points, 0)
+	pointsTween.interpolate_property(self,"points",points,totalPoints,1.0,Tween.TRANS_LINEAR,Tween.EASE_IN_OUT)
 	pointsTween.start()
 	pointsTweenActive = true
 
