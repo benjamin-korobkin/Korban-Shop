@@ -18,8 +18,8 @@ onready var occasion : String
 onready var category : String
 
 const ZERO : float = 0.0
-const MINUS_POINTS : float = -333.0
-const CORRECT_ORDER_POINTS : float = 110.0
+const MINUS_POINTS : float = -300.0
+const CORRECT_ORDER_POINTS : float = 100.0
 
 onready var decreaseScore : bool = false
 
