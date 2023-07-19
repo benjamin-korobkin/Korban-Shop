@@ -73,7 +73,7 @@ func apply_texture(gender : String):
 
 #gets order from level node.
 func get_order(order):
-	gender = order[3]
+	#gender = order[3]
 	orderDict = order[2].duplicate(true)
 	occasion = order[1]
 	category = order[0]

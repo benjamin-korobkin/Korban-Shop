@@ -119,131 +119,107 @@ var levelsGenderDict : Dictionary = {
 #--------------------------------------------
 # All the korban categories, text, and amount, this dictionary contains all the logic for orders.
 # Used by LevelGui node, and Customers.
-# Level -> Gender -> Korban type -> Occasion -> "animals" -> Animal : Amount
+# Level -> Korban type -> Occasion -> "animals" -> Animal : Amount
 #--------------------------------------------
 var korbansDict : Dictionary = {
 	"Tutorial" : {
-		"male" : {
-			"Chatat -" : {
-				"Annointing a Kohen" : {
-					"animals" : {
-							"Bull" : 1,
-						}
-				},
+		"Chatat -" : {
+			"Annointing a Kohen" : {
+				"animals" : {
+					"Bull" : 1,
+				}
 			},
 		},
 	},
 	"Level 1" : {
-		"male" : {
-			"Olah -" : {
-				"Woman after childbirth" : {
-					"animals" : {
-							"Lamb" : 1,
-						}
-				},
+		"Olah -" : {
+			"Woman after childbirth" : {
+				"animals" : {
+					"Lamb" : 1,
+				}
 			},
-		},
-		"female" : {
-			"Olah -" : {
-				"Nazir tahor" : {
+		
+			"Nazir tahor" : {
 					"animals" : {
-							"Lamb" : 1,
-						}
-				},
+						"Lamb" : 1,
+					}
 			},
 		},
 	},
 	"Level 2" : {
-		"male" : {
-			"Chatat -" : {
-				"Mussaf on Chag" : {
-					"animals" : {
-							"Kid" : 1,
-						}
-				},
-				"Mussaf on Rosh Chodesh" : {
-					"animals" : {
-							"Kid" : 1,
-						}
-				},
+		"Chatat -" : {
+			"Mussaf on Chag" : {
+				"animals" : {
+						"Kid" : 1,
+					}
 			},
-			"Olah -" : {
-				"Bringing an Omer" : {
-					"animals" : {
-							"Lamb" : 1,
-						}
-				},
+			"Mussaf on Rosh Chodesh" : {
+				"animals" : {
+						"Kid" : 1,
+					}
+			},
+		},
+		"Olah -" : {
+			"Bringing an Omer" : {
+				"animals" : {
+						"Lamb" : 1,
+				}
 			},
 		},
 	},
 	"Level 3" : {
-		"male" : {
-			"Chatat -" : {
-				"Yom Kippur" : {
-					"animals" : {
-							"Kid" : 1,
-						}
-				},
+		"Chatat -" : {
+			"Yom Kippur" : {
+				"animals" : {
+						"Kid" : 1,
+					}
 			},
-			"Asham -" : {
-				"Nazir tamei" : {
-					"animals" : {
-							"Lamb" : 1,
-						}
-				},
+		},
+		"Asham -" : {
+			"Nazir tamei" : {
+				"animals" : {
+						"Lamb" : 1,
+					}
 			},
 		},
 	},
 	"Level 4" : {
-		"male" : {
-			"Asham -" : {
-				"Me'ilah" : {
-					"animals" : {
-							"Ram" : 1,
-						}
-				},
-				"Doubtful sin" : {
-					"animals" : {
-							"Ram" : 1,
-						}
-				},
-				"Theft" : {
-					"animals" : {
-							"Ram" : 1,
-						}
-				},
+		"Asham -" : {
+			"Me'ilah" : {
+				"animals" : {
+						"Ram" : 1,
+					}
+			},
+			"Doubtful sin" : {
+				"animals" : {
+						"Ram" : 1,
+					}
+			},
+			"Theft" : {
+				"animals" : {
+						"Ram" : 1,
+					}
 			},
 		},
 	},
 	"Level 5" : {
-		"male" : {
-			"Chatat -" : {
-				"Personal sin" : {
-					"animals" : {
-							"Lamb" : 1,
-						}
-				},
-			},
-			"Olah -" : {
-				"Convert" : {
-					"animals" : {
-							"Sheep" : 1,
-						}
-				},
-				"Kayitz Hamizbe'ach" : {
-					"animals" : {
-							"Sheep" : 1,
-						}
-				},
+		"Chatat -" : {
+			"Personal sin" : {
+				"animals" : {
+						"Lamb" : 1,
+					}
 			},
 		},
-		"female" : {
-			"Chatat -" : {
-				"Personal sin" : {
-					"animals" : {
-							"Lamb" : 1,
-						}
-				},
+		"Olah -" : {
+			"Convert" : {
+				"animals" : {
+						"Sheep" : 1,
+				}
+			},
+			"Kayitz Hamizbe'ach" : {
+				"animals" : {
+						"Sheep" : 1,
+				}
 			},
 		},
 	},
@@ -271,75 +247,65 @@ var korbansDict : Dictionary = {
 		},
 	},
 	"Level 7" : {
-		"male" : {
-			"Olah -" : {
-				"Mussaf of Rosh Hashanah" : {
-					"animals" : {
-							"Bull" : 1,
-							"Ram" : 1,
-							"Lamb" : 7,
-						}
-				},
-				"Mussaf Yom Kippur" : {
-					"animals" : {
-							"Bull" : 1,
-							"Ram" : 1,
-							"Lamb" : 7,
-						}
-				},
+		"Olah -" : {
+			"Mussaf of Rosh Hashanah" : {
+				"animals" : {
+						"Bull" : 1,
+						"Ram" : 1,
+						"Lamb" : 7,
+					}
 			},
-			"Shlamim -" : {
-				"Korban todah" : {
-					"animals" : {
-							"Sheep" : 1,
-						}
-				},
+			"Mussaf Yom Kippur" : {
+				"animals" : {
+						"Bull" : 1,
+						"Ram" : 1,
+						"Lamb" : 7,
+					}
+			},
+		},
+		"Shlamim -" : {
+			"Korban todah" : {
+				"animals" : {
+						"Sheep" : 1,
+					}
 			},
 		},
 	},
 	"Level 8" : {
-		"male" : {
-			"Olah -" : {
-				"Mussaf of Rosh Chodesh" : {
-					"animals" : {
-							"Bull" : 2,
-							"Ram" : 1,
-							"Lamb" : 7,
-						}
-				},
+		"Olah -" : {
+			"Mussaf of Rosh Chodesh" : {
+				"animals" : {
+						"Bull" : 2,
+						"Ram" : 1,
+						"Lamb" : 7,
+					}
 			},
 		},
 	},
 	"Level 9" : {
-		"male" : {
-			"Shlamim -" : {
-				"Nazir tahor" : {
-					"animals" : {
-							"Ram" : 1,
-						}
-				},
+		"Shlamim -" : {
+			"Nazir tahor" : {
+				"animals" : {
+					"Ram" : 1,
+				}
 			},
 		},
 	},
 	"Level 10" : {
-		"male" : {
-			"Shlamim -" : {
-				"Voluntary" : {
-					"animals" : {
-							"Sheep" : 1,
-						}
-				},
+		"Shlamim -" : {
+			"Voluntary" : {
+				"animals" : {
+						"Sheep" : 1,
+					}
 			},
 		},
 	},
 	"Endless" : {
-		"male" : {
-			"Shlamim -" : {
-				"Voluntary" : {
-					"animals" : {
-							"Sheep" : 1,
-						}
-				},
+		"Shlamim -" : {
+			"Voluntary" : {
+				"animals" : {
+					"Sheep" : 1,
+				}
 			},
 		},
 	},
