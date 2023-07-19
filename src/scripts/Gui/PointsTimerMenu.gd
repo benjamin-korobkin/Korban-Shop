@@ -40,11 +40,8 @@ func set_timer_and_points(_timeLeft,_points):
 
 #updates all parameters, and emit level failed to levelGui if time is 0
 func _physics_process(delta):
-	#if pointsTweenActive:
 	pointsLabel.text = str(int(ceil(points))) + "/" + str(int(levelPointTreshold))
-		#print("score is: " + pointsLabel.text)
 	check_score()
-	
 	seconds-= delta
 	timeLeft -= delta
 	if seconds <= 0 and minutes > 0:

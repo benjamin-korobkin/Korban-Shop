@@ -163,7 +163,7 @@ func get_customer_position():
 			positionsArray.append(customerPosition)
 			positionsArray.append(positionName)
 			return positionsArray
-			break
+			#break
 
 onready var order 
 #moves the player sprite to the order counter

@@ -9,6 +9,9 @@ onready var customersArea = $CustomersArea
 onready var customerSpawner = $CustomerSpawner
 onready var levelGui = get_node("/root/Game/GuiSafeArea/LevelGui")
 
+# For now, use an Array containing the occasions
+var currentOrders : Array
+
 signal handleOrdersMenuButton
 signal setOrder(order)
 signal setPosition()
@@ -92,19 +95,24 @@ func spawn_customer():
 func get_customer_order():
 	randNumGenerator.randomize()
 	var currentLevelsToTakeFrom : Array
+	# TODO: I understand the logic here but I'm not a fan of this loop using break.
+	# Need to find a smarter way to implement what we want.
 	for level in GameResources.korbansDict.size():
+		## name == Node.name (e.g. Tutorial, Level 1, ...)
 		if name == GameResources.korbansDict.keys()[level]:
 			currentLevelsToTakeFrom.append(GameResources.korbansDict.keys()[level])
 			break
 		else:
 			currentLevelsToTakeFrom.append(GameResources.korbansDict.keys()[level])
+	var uniqueChosen = false
+	# TODO: get rid of all gender references.
 	var chosenLevel = currentLevelsToTakeFrom[randNumGenerator.randi_range(0,currentLevelsToTakeFrom.size() - 1)]
 	var customerGender = get_customer_gender(chosenLevel)
 	var randomOrder = randNumGenerator.randi_range(0,GameResources.korbansDict[chosenLevel][customerGender].keys().size() -1)
 	var fullOrder = GameResources.korbansDict[chosenLevel][customerGender].keys()[randomOrder]
 	var orderDict = GameResources.korbansDict[chosenLevel][customerGender][fullOrder].duplicate(true)
-	var category = GameResources.korbansDict[chosenLevel][customerGender].keys()[randomOrder]
-	var occasion = orderDict.keys()[0]
+	var category  = GameResources.korbansDict[chosenLevel][customerGender].keys()[randomOrder]
+	var occasion  = orderDict.keys()[0]
 	var KorbanotDict = orderDict[occasion]["animals"]
 	var orderArray : Array
 	orderArray.append(category)
@@ -140,7 +148,7 @@ func get_customer_position():
 			positionsArray.append(customerPosition)
 			positionsArray.append(positionName)
 			return positionsArray
-			break
+			#break
 
 onready var order 
 #moves the player sprite to the order counter

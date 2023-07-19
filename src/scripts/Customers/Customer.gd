@@ -33,7 +33,7 @@ onready var pointsCalculationDict : Dictionary = {
 var points : float = ZERO
 #var successiveOrdersDone = 0
 
-signal setCard
+signal spawn_card
 signal handleHighlights
 signal handleCardHighlights
 signal showCard
@@ -51,7 +51,7 @@ signal handleOrdersMenuButton
 
 func _ready():
 	randomize()
-	connect("setCard",get_node("/root/Game/GuiSafeArea/LevelGui/CardsMenu"),"spawn_card")
+	connect("spawn_card",get_node("/root/Game/GuiSafeArea/LevelGui/CardsMenu"),"spawn_card")
 	connect("handleHighlights",get_parent(),"handle_highlights")
 	apply_texture(gender)
 	create_card(category,occasion,orderDict,self)
@@ -80,7 +80,7 @@ func get_order(order):
 
 #creates a card when customer is created, passes all the order dictionary to it using a signal.
 func create_card(category,occasion,KorbanotDict,customerPath):
-	emit_signal("setCard",category,occasion,KorbanotDict,customerPath)
+	emit_signal("spawn_card",category,occasion,KorbanotDict,customerPath)
 
 
 #sets position to go to

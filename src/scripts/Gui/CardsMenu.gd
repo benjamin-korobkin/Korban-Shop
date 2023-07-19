@@ -53,7 +53,7 @@ func get_card_position():
 			positionsArray.append(cardPosition)
 			positionsArray.append(positionName)
 			return positionsArray
-			break
+			break # what's the purpose of break?
 
 
 func handle_highlights(cardPath):
@@ -79,7 +79,7 @@ func compare_order_with_card(order):
 			else:
 				#wrong order, activates a function is highlighted card to activate X ui on customer, and make player
 				#move back to the orders table to "bring back to order", punishing the player
-				#for a wrong answer which costs him 2 seconds.
+				#for a wrong answer
 				highlightedCard.activate_customer_ui(false)
 				return
 #if order is completed, activates function in highlighted card to queue_free
@@ -87,8 +87,6 @@ func compare_order_with_card(order):
 		highlightedCard.activate_customer_ui(true)
 	else:
 		highlightedCard.activate_customer_ui(false)
-
-
 
 
 
