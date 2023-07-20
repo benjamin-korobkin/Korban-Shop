@@ -102,24 +102,11 @@ var levelsPointTreshold : Dictionary = {
 	"Level 10" : 800,
 	"Endless" : 10000,
 }
-var levelsGenderDict : Dictionary = {
-	"Tutorial" : "male",
-	"Level 1" : "male and female",
-	"Level 2" : "male",
-	"Level 3" : "male",
-	"Level 4" : "male",
-	"Level 5" : "male and female",
-	"Level 6" : "male",
-	"Level 7" : "male",
-	"Level 8" : "male",
-	"Level 9" : "male",
-	"Level 10" : "male",
-	"Endless" : "male",
-}
 #--------------------------------------------
 # All the korban categories, text, and amount, this dictionary contains all the logic for orders.
 # Used by LevelGui node, and Customers.
 # Level -> Korban type -> Occasion -> "animals" -> Animal : Amount
+# TODO: Change to 8 levels instead of 10
 #--------------------------------------------
 var korbansDict : Dictionary = {
 	"Tutorial" : {

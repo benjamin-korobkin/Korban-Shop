@@ -85,7 +85,7 @@ func spawn_tutorial_gui():
 	levelGui.add_child(tutorialGuiRsc)
 
 #creates customer instance.
-#sets the customers order, position to walk to,gender, and adds it as child of customers area.
+#sets the customers order, position to walk to, and adds it as child of customers area.
 func spawn_customer():
 	yield(get_tree(),"idle_frame")
 	var customerRsc = GameResources.scenesDict["customer"].instance()
@@ -122,35 +122,17 @@ func get_customer_order():
 		else:
 			currentLevelsToTakeFrom.append(GameResources.korbansDict.keys()[level])
 	var chosenLevel = currentLevelsToTakeFrom[randNumGenerator.randi_range(0,currentLevelsToTakeFrom.size() - 1)]
-	var customerGender = get_customer_gender(chosenLevel)
-	var randomOrder = randNumGenerator.randi_range(0,GameResources.korbansDict[chosenLevel][customerGender].keys().size() -1)
-	var fullOrder = GameResources.korbansDict[chosenLevel][customerGender].keys()[randomOrder]
-	var orderDict = GameResources.korbansDict[chosenLevel][customerGender][fullOrder].duplicate(true)
-	var category = GameResources.korbansDict[chosenLevel][customerGender].keys()[randomOrder]
+	var randomOrder = randNumGenerator.randi_range(0,GameResources.korbansDict[chosenLevel].keys().size() -1)
+	var fullOrder = GameResources.korbansDict[chosenLevel].keys()[randomOrder]
+	var orderDict = GameResources.korbansDict[chosenLevel][fullOrder].duplicate(true)
+	var category = GameResources.korbansDict[chosenLevel].keys()[randomOrder]
 	var occasion = orderDict.keys()[0]
 	var KorbanotDict = orderDict[occasion]["animals"]
 	var orderArray : Array
 	orderArray.append(category)
 	orderArray.append(occasion)
 	orderArray.append(KorbanotDict)
-	orderArray.append(customerGender)
 	return orderArray
-
-#returns the customers gender based on the level.
-func get_customer_gender(levelName):
-	var customerGender
-	match GameResources.levelsGenderDict[levelName]:
-		"male":
-			customerGender = "male"
-		"female":
-			customerGender = "female"
-		"male and female":
-			var randTexture = randNumGenerator.randi_range(0,1)
-			if randTexture == 0:
-				customerGender = "male"
-			else:
-				customerGender = "female"
-	return customerGender
 
 #gets customer position, returns as array with name and position.
 func get_customer_position():

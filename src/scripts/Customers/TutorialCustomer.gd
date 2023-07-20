@@ -11,8 +11,6 @@ onready var waitingPos
 onready var positionName 
 onready var cardNodePath 
 
-onready var gender : String
-
 onready var orderDict : Dictionary
 onready var occasion : String
 onready var category : String
@@ -49,7 +47,7 @@ func _ready():
 	randomize()
 	connect("spawn_card",get_node("/root/Game/GuiSafeArea/LevelGui/CardsMenu"),"spawn_tutorial_card")
 	connect("handleHighlights",get_parent(),"handle_highlights")
-	apply_texture(gender)
+	apply_texture()
 	create_card(category,occasion,orderDict,self)
 	move_to_pos()
 	yield(get_tree(),"idle_frame")
@@ -60,18 +58,14 @@ func _ready():
 	connect("addPoints",pointsTimerMenuNode,"add_points")
 
 #applies random texture from animatedsprite
-func apply_texture(gender : String):
+func apply_texture():
 	randNumGenerator.randomize()
-	if gender == "male":
-		animatedSprite.animation = "male"
-	else:
-		animatedSprite.animation = "female"
-	var randomTexture = randNumGenerator.randi_range(0,animatedSprite.frames.get_frame_count(gender) -1)
+	animatedSprite.animation = "male"
+	var randomTexture = randNumGenerator.randi_range(0,animatedSprite.frames.get_frame_count("male") -1)
 	animatedSprite.frame = randomTexture
 
 #gets order from level node.
 func get_order(order):
-	gender = order[3]
 	orderDict = order[2].duplicate(true)
 	occasion = order[1]
 	category = order[0]
