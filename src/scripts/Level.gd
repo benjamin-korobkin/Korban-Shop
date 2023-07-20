@@ -105,17 +105,21 @@ func get_customer_order():
 		else:
 			currentLevelsToTakeFrom.append(GameResources.korbansDict.keys()[level])
 	var uniqueChosen = false
-	var chosenLevel = currentLevelsToTakeFrom[randNumGenerator.randi_range(0,currentLevelsToTakeFrom.size() - 1)]
-	var randomOrder = randNumGenerator.randi_range(0,GameResources.korbansDict[chosenLevel].keys().size() -1)
-	var fullOrder = GameResources.korbansDict[chosenLevel].keys()[randomOrder]
-	var orderDict = GameResources.korbansDict[chosenLevel][fullOrder].duplicate(true)
-	var category  = GameResources.korbansDict[chosenLevel].keys()[randomOrder]
-	var occasion  = orderDict.keys()[0]
-	var KorbanotDict = orderDict[occasion]["animals"]
 	var orderArray : Array
-	orderArray.append(category)
-	orderArray.append(occasion)
-	orderArray.append(KorbanotDict)
+	while !uniqueChosen:
+		var chosenLevel = currentLevelsToTakeFrom[randNumGenerator.randi_range(0,currentLevelsToTakeFrom.size() - 1)]
+		var randomOrder = randNumGenerator.randi_range(0,GameResources.korbansDict[chosenLevel].keys().size() -1)
+		var fullOrder = GameResources.korbansDict[chosenLevel].keys()[randomOrder]
+		var orderDict = GameResources.korbansDict[chosenLevel][fullOrder].duplicate(true)
+		var category  = GameResources.korbansDict[chosenLevel].keys()[randomOrder]
+		var occasion  = orderDict.keys()[randNumGenerator.randi_range(0,orderDict.keys().size() -1)] # BUG!!! Change to random number
+		if !currentOrders.has(occasion):
+			currentOrders.append(occasion)
+			uniqueChosen = true
+			var KorbanotDict = orderDict[occasion]["animals"]
+			orderArray.append(category)
+			orderArray.append(occasion)
+			orderArray.append(KorbanotDict)
 	return orderArray
 
 #gets customer position, returns as array with name and position.
@@ -129,7 +133,9 @@ func get_customer_position():
 			positionsArray.append(customerPosition)
 			positionsArray.append(positionName)
 			return positionsArray
-			#break
+
+func remove_order_from_array(occasion):
+	currentOrders.erase(occasion)
 
 onready var order 
 #moves the player sprite to the order counter
@@ -173,9 +179,9 @@ func handle_box_sprite(hide):
 	else:
 		player.get_node("Box").show()
 
-#checks if customers reached 4 which is max allowed, then one shots customerspawner.
+#checks if customers reached 3 which is max allowed, then one shots customerspawner.
 func check_for_customers():
-	if customersArea.get_child_count() == 4:
+	if customersArea.get_child_count() == 3:
 		customerSpawner.one_shot = true
 		return
 	else:

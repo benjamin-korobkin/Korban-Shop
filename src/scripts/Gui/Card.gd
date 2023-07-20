@@ -54,7 +54,7 @@ func _on_CardButton_pressed():
 		tween.interpolate_property(korban,"modulate",OPAQUE,TRANSPARENT,FLIP_TIME,Tween.TRANS_CUBIC,Tween.EASE_IN)
 		tween.start()
 
-#handles card "flip" animation, hiding and showing the korbam/occasion text.
+#handles card "flip" animation, hiding and showing the korban/occasion text.
 func _on_Tween_tween_completed(object, key):
 	cardButton.disabled = false
 	if occasion.modulate == TRANSPARENT and !korban.visible:

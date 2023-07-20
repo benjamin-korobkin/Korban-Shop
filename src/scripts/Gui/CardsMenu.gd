@@ -83,7 +83,7 @@ func compare_order_with_card(order):
 				highlightedCard.activate_customer_ui(false)
 				return
 #if order is completed, activates function in highlighted card to queue_free
-#and make highlighted customer move out of bounds and queue free aswell.
+#and make highlighted customer move out of bounds and queue free as well.
 		highlightedCard.activate_customer_ui(true)
 	else:
 		highlightedCard.activate_customer_ui(false)

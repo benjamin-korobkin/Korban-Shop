@@ -37,7 +37,8 @@ signal handleCardHighlights
 signal showCard
 signal spawnCustomer
 signal addPoints
-#signal addOrderDone
+signal handleCompleteOrderButton
+
 
 onready var orderCompleted : bool = false
 onready var walkingTowardsStartingPoint : bool = true
@@ -93,8 +94,6 @@ func move_to_pos():
 
 #highlights the customer when clicked
 var highlighted : bool = false
-signal handleCompleteOrderButton
-
 
 func _on_HighlightButton_pressed():
 	if !highlighted:
@@ -131,6 +130,7 @@ func _on_Tween_tween_completed(object, key):
 
 #checks order condition and applying the right gui + changes orderCompelted bool, then displaying gui.
 signal handleBoxSprite
+signal eraseOrderFromCurrentOrders
 
 #signal to player node to hide or show box depending if order complete
 func check_order_condition(isOrderComplete):
@@ -138,6 +138,8 @@ func check_order_condition(isOrderComplete):
 		orderCompleted = true
 		answerSprite.texture = GameResources.GuiTexturesDict["checkMark"]
 		Sounds.play_sound("confirmation","Sfx2")
+		connect("eraseOrderFromCurrentOrders",get_node("/root/Game/Levels").get_child(0),"remove_order_from_array",[],CONNECT_ONESHOT)
+		emit_signal("eraseOrderFromCurrentOrders",occasion)
 		connect("handleBoxSprite",get_node("/root/Game/Levels").get_child(0),"handle_box_sprite",[],CONNECT_ONESHOT)
 		emit_signal("handleBoxSprite",true)
 		connect("handleCompleteOrderButton",levelGui,"handle_complete_order",[],CONNECT_ONESHOT)
