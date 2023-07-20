@@ -113,8 +113,8 @@ func get_customer_order():
 		var orderDict = GameResources.korbansDict[chosenLevel][fullOrder].duplicate(true)
 		var category  = GameResources.korbansDict[chosenLevel].keys()[randomOrder]
 		var occasion  = orderDict.keys()[randNumGenerator.randi_range(0,orderDict.keys().size() -1)] # BUG!!! Change to random number
-		if !currentOrders.has(occasion):
-			currentOrders.append(occasion)
+		if !currentOrders.has([category,occasion]):
+			currentOrders.append([category,occasion])
 			uniqueChosen = true
 			var KorbanotDict = orderDict[occasion]["animals"]
 			orderArray.append(category)
@@ -134,8 +134,8 @@ func get_customer_position():
 			positionsArray.append(positionName)
 			return positionsArray
 
-func remove_order_from_array(occasion):
-	currentOrders.erase(occasion)
+func remove_order_from_array(korban_tuple):
+	currentOrders.erase(korban_tuple)
 
 onready var order 
 #moves the player sprite to the order counter

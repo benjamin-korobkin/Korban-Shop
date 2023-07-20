@@ -139,7 +139,7 @@ func check_order_condition(isOrderComplete):
 		answerSprite.texture = GameResources.GuiTexturesDict["checkMark"]
 		Sounds.play_sound("confirmation","Sfx2")
 		connect("eraseOrderFromCurrentOrders",get_node("/root/Game/Levels").get_child(0),"remove_order_from_array",[],CONNECT_ONESHOT)
-		emit_signal("eraseOrderFromCurrentOrders",occasion)
+		emit_signal("eraseOrderFromCurrentOrders",[category,occasion])
 		connect("handleBoxSprite",get_node("/root/Game/Levels").get_child(0),"handle_box_sprite",[],CONNECT_ONESHOT)
 		emit_signal("handleBoxSprite",true)
 		connect("handleCompleteOrderButton",levelGui,"handle_complete_order",[],CONNECT_ONESHOT)
