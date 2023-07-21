@@ -15,10 +15,6 @@ onready var openPositions : Dictionary = {
 		"position" : $"../CardsMenuPositions/Pos3".position,
 		"open" : true,
 	},
-	"Pos4" : {
-		"position" : $"../CardsMenuPositions/Pos4".position,
-		"open" : true,
-	},
 }
 
 onready var highlightedCard

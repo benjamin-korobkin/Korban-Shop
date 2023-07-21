@@ -117,6 +117,9 @@ anchor_bottom = 0.268
 margin_top = 0.559998
 margin_bottom = -0.432007
 theme = ExtResource( 45 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="CardsMenu" type="Control" parent="GuiSafeArea/LevelGui"]
 anchor_left = 0.5
@@ -141,16 +144,13 @@ margin_bottom = 107.088
 mouse_filter = 2
 
 [node name="Pos1" type="Position2D" parent="GuiSafeArea/LevelGui/CardsMenuPositions"]
-position = Vector2( 99.5, 105 )
+position = Vector2( 120, 105 )
 
 [node name="Pos2" type="Position2D" parent="GuiSafeArea/LevelGui/CardsMenuPositions"]
-position = Vector2( 233.5, 105 )
+position = Vector2( 300, 105 )
 
 [node name="Pos3" type="Position2D" parent="GuiSafeArea/LevelGui/CardsMenuPositions"]
-position = Vector2( 366, 105 )
-
-[node name="Pos4" type="Position2D" parent="GuiSafeArea/LevelGui/CardsMenuPositions"]
-position = Vector2( 499.5, 105 )
+position = Vector2( 480, 105 )
 
 [node name="PointsTimerMenu" type="Control" parent="GuiSafeArea/LevelGui"]
 pause_mode = 1

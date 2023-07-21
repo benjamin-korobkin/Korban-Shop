@@ -35,18 +35,12 @@ onready var openPositions : Dictionary = {
 		"position" : $CustomersPositionsArea/Pos3.position,
 		"open" : true,
 	},
-	"Pos4" : {
-		"position" : $CustomersPositionsArea/Pos4.position,
-		"open" : true,
-	},
 }
 onready var outOfBoundsPositions : Dictionary = {
 	"right" : $CustomersPositionsArea/outOfBoundsPosRight.position,
 	"left" : $CustomersPositionsArea/outOfBoundsPosLeft.position,
 }
 onready var customerOrderPos = $CustomersPositionsArea/CustomerOrderPos.position
-
-
 
 onready var randNumGenerator = RandomNumberGenerator.new()
 
@@ -145,7 +139,6 @@ func get_customer_position():
 			positionsArray.append(customerPosition)
 			positionsArray.append(positionName)
 			return positionsArray
-			#break
 
 onready var order 
 #moves the player sprite to the order counter
@@ -191,7 +184,7 @@ func handle_box_sprite(hide):
 
 #checks if customers reached 4 which is max allowed, then one shots customerspawner.
 func check_for_customers():
-	if customersArea.get_child_count() == 4:
+	if customersArea.get_child_count() == 3:
 		customerSpawner.one_shot = true
 		return
 	else:

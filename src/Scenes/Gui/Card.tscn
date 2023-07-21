@@ -10,17 +10,20 @@ script = ExtResource( 3 )
 [node name="CardButton" type="Button" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -62.5
+margin_left = -70.0
 margin_top = -90.0
-margin_right = 62.5
+margin_right = 85.0
 margin_bottom = 90.0
 rect_min_size = Vector2( 125, 180 )
 rect_pivot_offset = Vector2( 62, 90 )
 focus_mode = 0
 mouse_default_cursor_shape = 2
 theme = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Occasion" type="Label" parent="CardButton"]
 anchor_right = 1.0

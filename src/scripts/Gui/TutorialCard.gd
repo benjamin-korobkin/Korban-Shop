@@ -12,7 +12,7 @@ onready var positionName
 onready var customerNodePath
 onready var cardsMenu = get_parent()
 onready var levelGui = get_node("/root/Game/GuiSafeArea/LevelGui")
-const FLIP_TIME : float = 0.4
+const FLIP_TIME : float = 0.8
 const HIGHLIGHT_COLOR = Color.yellow#light blue#Color(0.568627, 0.921569, 0.956863)
 const OPAQUE : Color = Color(1,1,1,1)
 const TRANSPARENT : Color = Color(1,1,1,0)
@@ -36,11 +36,11 @@ func set_lables():
 
 #disables card and activates flipping animation.
 var clickedOnce : bool = false
-signal cardExp6
+signal cardExp7
 func _on_CardButton_pressed():
 	if !clickedOnce:
-		connect("cardExp6",levelGui.get_node("TutorialGui"),"card_exp_6",[],CONNECT_ONESHOT)
-		emit_signal("cardExp6")
+		connect("cardExp7",levelGui.get_node("TutorialGui"),"card_exp_7",[],CONNECT_ONESHOT)
+		emit_signal("cardExp7")
 	Sounds.play_sound("click","Sfx")
 	cardButton.disabled = true
 	if occasion.modulate == OPAQUE:

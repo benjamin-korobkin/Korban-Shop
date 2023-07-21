@@ -39,10 +39,6 @@ onready var openPositions : Dictionary = {
 		"position" : $CustomersPositionsArea/Pos3.position,
 		"open" : true,
 	},
-	"Pos4" : {
-		"position" : $CustomersPositionsArea/Pos4.position,
-		"open" : true,
-	},
 }
 onready var outOfBoundsPositions : Dictionary = {
 	"right" : $CustomersPositionsArea/outOfBoundsPosRight.position,

@@ -61,30 +61,37 @@ func card_exp_4():
 func _on_CardExplanation4Button_pressed():
 	Sounds.play_sound("click","Sfx")
 	card_exp_5()
-
-#click to advance to card_exp_6() 
-signal enableCardButton
+	
 func card_exp_5():
 	$CardExplanation4.hide()
 	$CardExplanation5.show()
-	$CardExplanation5/AnimationPlayer.play("click")
+
+func _on_CardExplanation5Button_pressed():
+	Sounds.play_sound("click","Sfx")
+	card_exp_6()
+
+signal enableCardButton
+func card_exp_6():
+	$CardExplanation5.hide()
+	$CardExplanation6.show()
+	$CardExplanation6/AnimationPlayer.play("click")
 	connect("enableCardButton",get_parent().get_node("CardsMenu").get_child(0),"enable_button",[],CONNECT_ONESHOT)
 	emit_signal("enableCardButton")
 
 
-func card_exp_6():
-	$CardExplanation5/AnimationPlayer.stop()
-	$CardExplanation5.hide()
+func card_exp_7():
+	$CardExplanation6/AnimationPlayer.stop()
+	$CardExplanation6.hide()
 	yield(get_tree().create_timer(2),"timeout")
-	$CardExplanation6.show()
+	$CardExplanation7.show()
 
-func _on_CardExplanation6Button_pressed():
+func _on_CardExplanation7Button_pressed():
 	Sounds.play_sound("click","Sfx")
 	shop_exp_1()
 
 
 func shop_exp_1():
-	$CardExplanation6.hide()
+	$CardExplanation7.hide()
 	$ShopExplanation.show()
 	ordersMenuButton.disabled = false
 	$ShopExplanation/AnimationPlayer.play("click")
