@@ -64,6 +64,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Background" type="Control" parent="."]
 anchor_right = 1.0
@@ -139,18 +142,18 @@ margin_top = -720.0
 margin_right = 299.2
 margin_bottom = -446.0
 mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Pos1" type="Position2D" parent="CustomersPositionsArea"]
 position = Vector2( 150, 221 )
 
 [node name="Pos2" type="Position2D" parent="CustomersPositionsArea"]
-position = Vector2( 398, 223 )
+position = Vector2( 230, 165 )
 
 [node name="Pos3" type="Position2D" parent="CustomersPositionsArea"]
-position = Vector2( 480, 154 )
-
-[node name="Pos4" type="Position2D" parent="CustomersPositionsArea"]
-position = Vector2( 275, 135 )
+position = Vector2( 406, 214 )
 
 [node name="CustomerOrderPos" type="Position2D" parent="CustomersPositionsArea"]
 position = Vector2( 300, 251 )

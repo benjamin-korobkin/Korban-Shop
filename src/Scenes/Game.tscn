@@ -229,11 +229,17 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Background" type="ColorRect" parent="GuiSafeArea/LevelGui/OrdersMenu"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0.247059, 0.490196, 0.698039, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="TitleContainer" type="HBoxContainer" parent="GuiSafeArea/LevelGui/OrdersMenu"]
 anchor_left = 0.5
@@ -241,15 +247,17 @@ anchor_right = 0.5
 margin_left = -300.0
 margin_right = 300.0
 margin_bottom = 89.0
+alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="GuiSafeArea/LevelGui/OrdersMenu/TitleContainer"]
-margin_right = 20.0
+margin_left = 89.0
+margin_right = 109.0
 margin_bottom = 89.0
 rect_min_size = Vector2( 20, 0 )
 
 [node name="Title" type="Label" parent="GuiSafeArea/LevelGui/OrdersMenu/TitleContainer"]
-margin_left = 24.0
-margin_right = 421.0
+margin_left = 113.0
+margin_right = 510.0
 margin_bottom = 89.0
 theme = ExtResource( 12 )
 text = "Order Menu"
@@ -263,6 +271,9 @@ margin_left = -300.0
 margin_top = -895.0
 margin_right = 197.0
 script = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Kid" type="HBoxContainer" parent="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager"]
 margin_right = 497.0
@@ -281,10 +292,15 @@ theme = ExtResource( 30 )
 [node name="Label" type="Label" parent="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager/Kid/Background2"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = -1.0
+margin_right = -1.0
 theme = ExtResource( 32 )
 text = "Kid"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="MinusButton" type="TextureButton" parent="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager/Kid"]
 margin_left = 156.0
@@ -311,6 +327,9 @@ theme = ExtResource( 29 )
 text = "0"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="PlusButton" type="TextureButton" parent="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager/Kid"]
 margin_left = 364.0
@@ -345,6 +364,9 @@ theme = ExtResource( 32 )
 text = "Bull"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="MinusButton" type="TextureButton" parent="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager/Bull"]
 margin_left = 156.0
@@ -403,6 +425,9 @@ theme = ExtResource( 32 )
 text = "Lamb"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="MinusButton" type="TextureButton" parent="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager/Lamb"]
 margin_left = 156.0
@@ -461,6 +486,9 @@ theme = ExtResource( 32 )
 text = "Ram"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="MinusButton" type="TextureButton" parent="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager/Ram"]
 margin_left = 156.0
@@ -497,191 +525,18 @@ texture_pressed = ExtResource( 25 )
 texture_hover = ExtResource( 24 )
 texture_disabled = ExtResource( 28 )
 
-[node name="Sheep" type="HBoxContainer" parent="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager"]
+[node name="MarginContainer2" type="MarginContainer" parent="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager"]
 margin_top = 416.0
 margin_right = 497.0
 margin_bottom = 516.0
-alignment = 1
-script = ExtResource( 13 )
-
-[node name="Background2" type="Panel" parent="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager/Sheep"]
-margin_left = 32.0
-margin_right = 152.0
-margin_bottom = 100.0
-rect_min_size = Vector2( 120, 100 )
-mouse_default_cursor_shape = 2
-theme = ExtResource( 30 )
-
-[node name="Label" type="Label" parent="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager/Sheep/Background2"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-theme = ExtResource( 32 )
-text = "Sheep"
-align = 1
-valign = 1
-
-[node name="MinusButton" type="TextureButton" parent="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager/Sheep"]
-margin_left = 156.0
-margin_right = 256.0
-margin_bottom = 100.0
-mouse_default_cursor_shape = 2
-texture_normal = ExtResource( 22 )
-texture_pressed = ExtResource( 27 )
-texture_hover = ExtResource( 26 )
-texture_disabled = ExtResource( 21 )
-
-[node name="Background" type="Panel" parent="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager/Sheep"]
-margin_left = 260.0
-margin_right = 360.0
-margin_bottom = 100.0
-rect_min_size = Vector2( 100, 100 )
-theme = ExtResource( 30 )
-
-[node name="Amount" type="Label" parent="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager/Sheep/Background"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-theme = ExtResource( 29 )
-text = "0"
-align = 1
-valign = 1
-
-[node name="PlusButton" type="TextureButton" parent="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager/Sheep"]
-margin_left = 364.0
-margin_right = 464.0
-margin_bottom = 100.0
-mouse_default_cursor_shape = 2
-texture_normal = ExtResource( 23 )
-texture_pressed = ExtResource( 25 )
-texture_hover = ExtResource( 24 )
-texture_disabled = ExtResource( 28 )
-
-[node name="Goat" type="HBoxContainer" parent="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager"]
-margin_top = 520.0
-margin_right = 497.0
-margin_bottom = 620.0
-alignment = 1
-script = ExtResource( 13 )
-
-[node name="Background2" type="Panel" parent="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager/Goat"]
-margin_left = 32.0
-margin_right = 152.0
-margin_bottom = 100.0
-rect_min_size = Vector2( 120, 100 )
-mouse_default_cursor_shape = 2
-theme = ExtResource( 30 )
-
-[node name="Label" type="Label" parent="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager/Goat/Background2"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-theme = ExtResource( 32 )
-text = "Goat"
-align = 1
-valign = 1
-
-[node name="MinusButton" type="TextureButton" parent="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager/Goat"]
-margin_left = 156.0
-margin_right = 256.0
-margin_bottom = 100.0
-mouse_default_cursor_shape = 2
-texture_normal = ExtResource( 22 )
-texture_pressed = ExtResource( 27 )
-texture_hover = ExtResource( 26 )
-texture_disabled = ExtResource( 21 )
-
-[node name="Background" type="Panel" parent="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager/Goat"]
-margin_left = 260.0
-margin_right = 360.0
-margin_bottom = 100.0
-rect_min_size = Vector2( 100, 100 )
-theme = ExtResource( 30 )
-
-[node name="Amount" type="Label" parent="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager/Goat/Background"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-theme = ExtResource( 29 )
-text = "0"
-align = 1
-valign = 1
-
-[node name="PlusButton" type="TextureButton" parent="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager/Goat"]
-margin_left = 364.0
-margin_right = 464.0
-margin_bottom = 100.0
-mouse_default_cursor_shape = 2
-texture_normal = ExtResource( 23 )
-texture_pressed = ExtResource( 25 )
-texture_hover = ExtResource( 24 )
-texture_disabled = ExtResource( 28 )
-
-[node name="Cattle" type="HBoxContainer" parent="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager"]
-margin_top = 624.0
-margin_right = 497.0
-margin_bottom = 724.0
-alignment = 1
-script = ExtResource( 13 )
-
-[node name="Background2" type="Panel" parent="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager/Cattle"]
-margin_left = 32.0
-margin_right = 152.0
-margin_bottom = 100.0
-rect_min_size = Vector2( 120, 100 )
-mouse_default_cursor_shape = 2
-theme = ExtResource( 30 )
-
-[node name="Label" type="Label" parent="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager/Cattle/Background2"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-theme = ExtResource( 32 )
-text = "Cattle"
-align = 1
-valign = 1
-
-[node name="MinusButton" type="TextureButton" parent="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager/Cattle"]
-margin_left = 156.0
-margin_right = 256.0
-margin_bottom = 100.0
-mouse_default_cursor_shape = 2
-texture_normal = ExtResource( 22 )
-texture_pressed = ExtResource( 27 )
-texture_hover = ExtResource( 26 )
-texture_disabled = ExtResource( 21 )
-
-[node name="Background" type="Panel" parent="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager/Cattle"]
-margin_left = 260.0
-margin_right = 360.0
-margin_bottom = 100.0
-rect_min_size = Vector2( 100, 100 )
-theme = ExtResource( 30 )
-
-[node name="Amount" type="Label" parent="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager/Cattle/Background"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-theme = ExtResource( 29 )
-text = "0"
-align = 1
-valign = 1
-
-[node name="PlusButton" type="TextureButton" parent="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager/Cattle"]
-margin_left = 364.0
-margin_right = 464.0
-margin_bottom = 100.0
-mouse_default_cursor_shape = 2
-texture_normal = ExtResource( 23 )
-texture_pressed = ExtResource( 25 )
-texture_hover = ExtResource( 24 )
-texture_disabled = ExtResource( 28 )
-
-[node name="MarginContainer2" type="MarginContainer" parent="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager"]
-margin_top = 728.0
-margin_right = 497.0
-margin_bottom = 753.0
-rect_min_size = Vector2( 0, 25 )
+rect_min_size = Vector2( 0, 100 )
+rect_pivot_offset = Vector2( 447.393, 15.165 )
 mouse_filter = 2
 
 [node name="CompleteOrder" type="HBoxContainer" parent="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager"]
-margin_top = 757.0
+margin_top = 520.0
 margin_right = 497.0
-margin_bottom = 857.0
+margin_bottom = 620.0
 alignment = 1
 
 [node name="CompleteOrderButton" type="Button" parent="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager/CompleteOrder"]
@@ -694,13 +549,21 @@ mouse_default_cursor_shape = 2
 theme = ExtResource( 33 )
 
 [node name="Label" type="Label" parent="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager/CompleteOrder/CompleteOrderButton"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_left = -0.00282837
+anchor_right = 0.997172
+anchor_bottom = 1.08
+margin_left = -0.707092
+margin_top = -1.41425
+margin_right = -0.707092
+margin_bottom = -1.41425
 theme = ExtResource( 32 )
 text = "Complete Order"
 align = 1
 valign = 1
 autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="OrdersMenuButton" type="Button" parent="GuiSafeArea/LevelGui"]
 anchor_left = 1.0
@@ -761,9 +624,6 @@ autoplay = true
 [connection signal="resetAll" from="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager" to="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager/Bull" method="_on_OrdersManager_resetAll"]
 [connection signal="resetAll" from="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager" to="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager/Lamb" method="_on_OrdersManager_resetAll"]
 [connection signal="resetAll" from="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager" to="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager/Ram" method="_on_OrdersManager_resetAll"]
-[connection signal="resetAll" from="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager" to="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager/Sheep" method="_on_OrdersManager_resetAll"]
-[connection signal="resetAll" from="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager" to="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager/Goat" method="_on_OrdersManager_resetAll"]
-[connection signal="resetAll" from="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager" to="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager/Cattle" method="_on_OrdersManager_resetAll"]
 [connection signal="pressed" from="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager/Kid/MinusButton" to="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager/Kid" method="_on_MinusButton_pressed"]
 [connection signal="pressed" from="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager/Kid/PlusButton" to="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager/Kid" method="_on_PlusButton_pressed"]
 [connection signal="pressed" from="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager/Bull/MinusButton" to="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager/Bull" method="_on_MinusButton_pressed"]
@@ -772,12 +632,6 @@ autoplay = true
 [connection signal="pressed" from="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager/Lamb/PlusButton" to="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager/Lamb" method="_on_PlusButton_pressed"]
 [connection signal="pressed" from="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager/Ram/MinusButton" to="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager/Ram" method="_on_MinusButton_pressed"]
 [connection signal="pressed" from="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager/Ram/PlusButton" to="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager/Ram" method="_on_PlusButton_pressed"]
-[connection signal="pressed" from="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager/Sheep/MinusButton" to="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager/Sheep" method="_on_MinusButton_pressed"]
-[connection signal="pressed" from="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager/Sheep/PlusButton" to="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager/Sheep" method="_on_PlusButton_pressed"]
-[connection signal="pressed" from="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager/Goat/MinusButton" to="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager/Goat" method="_on_MinusButton_pressed"]
-[connection signal="pressed" from="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager/Goat/PlusButton" to="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager/Goat" method="_on_PlusButton_pressed"]
-[connection signal="pressed" from="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager/Cattle/MinusButton" to="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager/Cattle" method="_on_MinusButton_pressed"]
-[connection signal="pressed" from="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager/Cattle/PlusButton" to="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager/Cattle" method="_on_PlusButton_pressed"]
 [connection signal="pressed" from="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager/CompleteOrder/CompleteOrderButton" to="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager" method="_on_CompleteOrderButton_pressed"]
 [connection signal="pressed" from="GuiSafeArea/LevelGui/OrdersMenuButton" to="GuiSafeArea/LevelGui" method="_on_OrdersMenuButton_pressed"]
 [connection signal="tween_completed" from="GuiSafeArea/Tween" to="GuiSafeArea" method="_on_Tween_tween_completed"]

@@ -5,12 +5,12 @@ onready var ordersMenu = get_parent()
 
 onready var orderAmountDict = {
 	"Kid" : 0,
-	"Bull" : 0,
 	"Lamb" : 0,
 	"Ram" : 0,
-	"Sheep" : 0,
-	"Goat" : 0,
-	"Cattle" : 0,
+	"Bull" : 0,
+#	"Sheep" : 0,
+#	"Goat" : 0,
+#	"Cattle" : 0,
 }
 
 #connected trough scene tree already.

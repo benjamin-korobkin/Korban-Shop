@@ -48,11 +48,9 @@ var startGameLevelTextDict : Dictionary = {
 		1 : "Level 7",
 		2 : "Level 8",
 	},
-	4 : {
-		0 : "Level 9",
-		1 : "Level 10",
-		2 : "Endless",
-	},
+#	4 : {
+#		0 : "Endless",
+#	},
 }
 #--------------------------------------------
 #scene dictionary reference for loading
@@ -67,8 +65,6 @@ var levelScenesDict : Dictionary = {
 	"Level 6" : preload("res://src/Scenes/Levels/Level 6.tscn"),
 	"Level 7" : preload("res://src/Scenes/Levels/Level 7.tscn"),
 	"Level 8" : preload("res://src/Scenes/Levels/Level 8.tscn"),
-	"Level 9" : preload("res://src/Scenes/Levels/Level 9.tscn"),
-	"Level 10" : preload("res://src/Scenes/Levels/Level 10.tscn"),
 	"Endless" : preload("res://src/Scenes/Levels/Endless.tscn"),
 }
 #--------------------------------------------
@@ -84,8 +80,6 @@ var levelsTimeDict : Dictionary = {
 	"Level 6" : 390,
 	"Level 7" : 420,
 	"Level 8" : 450,
-	"Level 9" : 480,
-	"Level 10" : 510,
 	"Endless" : 3600,
 }
 var levelsPointTreshold : Dictionary = {
@@ -98,8 +92,6 @@ var levelsPointTreshold : Dictionary = {
 	"Level 6" : 600,
 	"Level 7" : 650,
 	"Level 8" : 700,
-	"Level 9" : 750,
-	"Level 10" : 800,
 	"Endless" : 10000,
 }
 #--------------------------------------------
@@ -110,25 +102,26 @@ var levelsPointTreshold : Dictionary = {
 #--------------------------------------------
 var korbansDict : Dictionary = {
 	"Tutorial" : {
-		"Chatat -" : {
-			"Annointing a Kohen" : {
-				"animals" : {
-					"Bull" : 1,
-				}
-			},
-		},
-	},
-	"Level 1" : {
 		"Olah -" : {
 			"Woman after childbirth" : {
 				"animals" : {
 					"Lamb" : 1,
 				}
 			},
-		
+		},
+	},
+	"Level 1" : {
+		"Olah -" : {
 			"Nazir tahor" : {
 					"animals" : {
 						"Lamb" : 1,
+					}
+			},
+		},
+		"Asham -" : {
+			"Doubtful sin" : {
+				"animals" : {
+						"Ram" : 1,
 					}
 			},
 		},
@@ -146,22 +139,8 @@ var korbansDict : Dictionary = {
 					}
 			},
 		},
-		"Olah -" : {
-			"Bringing an Omer" : {
-				"animals" : {
-						"Lamb" : 1,
-				}
-			},
-		},
 	},
 	"Level 3" : {
-		"Chatat -" : {
-			"Yom Kippur" : {
-				"animals" : {
-						"Kid" : 1,
-					}
-			},
-		},
 		"Asham -" : {
 			"Nazir tamei" : {
 				"animals" : {
@@ -169,15 +148,17 @@ var korbansDict : Dictionary = {
 					}
 			},
 		},
+		"Shlamim -" : {
+			"Nazir tahor" : {
+				"animals" : {
+					"Ram" : 1,
+				}
+			},
+		},
 	},
 	"Level 4" : {
 		"Asham -" : {
 			"Me'ilah" : {
-				"animals" : {
-						"Ram" : 1,
-					}
-			},
-			"Doubtful sin" : {
 				"animals" : {
 						"Ram" : 1,
 					}
@@ -190,46 +171,32 @@ var korbansDict : Dictionary = {
 		},
 	},
 	"Level 5" : {
-		"Chatat -" : {
-			"Personal sin" : {
+		"Olah -" : {
+			"Bringing an Omer" : {
 				"animals" : {
 						"Lamb" : 1,
+				}
+			},
+			"Tamid offerings" : {
+				"animals" : {
+						"Lamb" : 2,
 					}
-			},
-		},
-		"Olah -" : {
-			"Convert" : {
-				"animals" : {
-						"Sheep" : 1,
-				}
-			},
-			"Kayitz Hamizbe'ach" : {
-				"animals" : {
-						"Sheep" : 1,
-				}
 			},
 		},
 	},
 	"Level 6" : {
-		"male" : {
-			"Olah -" : {
-				"Tamid offerings" : {
-					"animals" : {
-							"Lamb" : 2,
-						}
-				},
-				"Shabbat mussaf" : {
-					"animals" : {
-							"Lamb" : 2,
-						}
-				},
-				"Mussaf Shmini Atzeret" : {
-					"animals" : {
-							"Bull" : 1,
-							"Ram" : 1,
-							"Lamb" : 7,
-						}
-				},
+		"Olah -" : {
+			"Shabbat mussaf" : {
+				"animals" : {
+						"Lamb" : 2,
+					}
+			},
+			"Mussaf of Rosh Chodesh" : {
+				"animals" : {
+						"Bull" : 2,
+						"Ram" : 1,
+						"Lamb" : 7,
+					}
 			},
 		},
 	},
@@ -250,48 +217,30 @@ var korbansDict : Dictionary = {
 					}
 			},
 		},
-		"Shlamim -" : {
-			"Korban todah" : {
-				"animals" : {
-						"Sheep" : 1,
-					}
-			},
-		},
 	},
 	"Level 8" : {
 		"Olah -" : {
-			"Mussaf of Rosh Chodesh" : {
+			"Mussaf Shmini Atzeret" : {
 				"animals" : {
-						"Bull" : 2,
+						"Bull" : 1,
 						"Ram" : 1,
 						"Lamb" : 7,
 					}
 			},
 		},
-	},
-	"Level 9" : {
-		"Shlamim -" : {
-			"Nazir tahor" : {
+		"Chatat -" : {
+			"Yom Kippur (Communal)" : {
 				"animals" : {
-					"Ram" : 1,
-				}
-			},
-		},
-	},
-	"Level 10" : {
-		"Shlamim -" : {
-			"Voluntary" : {
-				"animals" : {
-						"Sheep" : 1,
+						"Kid" : 1,
 					}
 			},
 		},
 	},
 	"Endless" : {
-		"Shlamim -" : {
-			"Voluntary" : {
+		"Asham -" : {
+			"Metzora" : {
 				"animals" : {
-					"Sheep" : 1,
+					"Lamb" : 1,
 				}
 			},
 		},

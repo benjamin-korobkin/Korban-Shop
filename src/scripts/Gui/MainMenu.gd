@@ -3,6 +3,8 @@ extends Control
 
 signal loadLevel
 
+const FIRST_LVL_PAGE = 1
+const LAST_LVL_PAGE = 3
 
 onready var mainMenu = $MainMenuControl/MainMenuVBox
 onready var startGameMenu = $MainMenuControl/StartGameMenuVBox
@@ -18,9 +20,6 @@ onready var optionsMenu = $MainMenuControl/OptionsMenuVBox
 onready var musicIcon = $MainMenuControl/OptionsMenuVBox/MenuHBox/OptionsMenu/HBoxContainer/Icon
 
 var startMenuPage = 1
-
-
-
 
 func load_data():
 	startMenuPage = GameStateService.globalData["startMenuPage"]
@@ -89,15 +88,15 @@ func _on_CreditsButton_pressed():
 #moves the start menu page forwads
 func _on_LeftButton_pressed():
 	Sounds.play_sound("click","Sfx")
-	if startMenuPage != 1:
-		startMenuPage -=1
+	if startMenuPage != FIRST_LVL_PAGE:
+		startMenuPage -= 1
 		initialize_startGameMenu(startMenuPage)
 
 #moves the start menu page backwards
 func _on_RightButton_pressed():
 	Sounds.play_sound("click","Sfx")
-	if startMenuPage != 4:
-		startMenuPage +=1
+	if startMenuPage != LAST_LVL_PAGE:
+		startMenuPage += 1
 		initialize_startGameMenu(startMenuPage)
 
 #sets the right text for the buttons, called at ready and by left and right button.
@@ -106,15 +105,16 @@ func initialize_startGameMenu(_startMenuPage):
 	handle_startGameMenu_buttons(_startMenuPage)
 	handle_level_selection_buttons(_startMenuPage)
 	for selectionButton in levelSelectionButtons.size():
-		levelSelectionButtons[selectionButton].text = GameResources.startGameLevelTextDict[_startMenuPage][selectionButton]
+		var lvlText = GameResources.startGameLevelTextDict[_startMenuPage][selectionButton]
+		levelSelectionButtons[selectionButton].text = lvlText
 
 #disables or enables the page buttons called from initialize_startGameMenu
 func handle_startGameMenu_buttons(_startMenuPage):
-	if _startMenuPage != 1:
+	if _startMenuPage != FIRST_LVL_PAGE:
 		startGameMenuLeftButton.disabled = false
 	else:
 		startGameMenuLeftButton.disabled = true
-	if _startMenuPage != 4:
+	if _startMenuPage != LAST_LVL_PAGE:
 		startGameMenuRightButton.disabled = false
 	else:
 		startGameMenuRightButton.disabled = true
