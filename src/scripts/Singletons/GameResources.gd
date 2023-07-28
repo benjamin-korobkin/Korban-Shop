@@ -65,14 +65,14 @@ var levelScenesDict : Dictionary = {
 	"Level 6" : preload("res://src/Scenes/Levels/Level 6.tscn"),
 	"Level 7" : preload("res://src/Scenes/Levels/Level 7.tscn"),
 	"Level 8" : preload("res://src/Scenes/Levels/Level 8.tscn"),
-	"Endless" : preload("res://src/Scenes/Levels/Endless.tscn"),
+	#"Endless" : preload("res://src/Scenes/Levels/Endless.tscn"),
 }
 #--------------------------------------------
 #loaded on level instance when node is ready
 #--------------------------------------------
 var levelsTimeDict : Dictionary = {
 	"Tutorial" : 150,
-	"Level 1" : 120,
+	"Level 1" : 150,
 	"Level 2" : 180,
 	"Level 3" : 240,
 	"Level 4" : 300,
@@ -80,19 +80,19 @@ var levelsTimeDict : Dictionary = {
 	"Level 6" : 390,
 	"Level 7" : 420,
 	"Level 8" : 450,
-	"Endless" : 3600,
+	#"Endless" : 3600,
 }
 var levelsPointTreshold : Dictionary = {
 	"Tutorial" : 100,
-	"Level 1" : 200,
-	"Level 2" : 300,
-	"Level 3" : 400,
-	"Level 4" : 500,
-	"Level 5" : 550,
-	"Level 6" : 600,
-	"Level 7" : 650,
-	"Level 8" : 700,
-	"Endless" : 10000,
+	"Level 1" : 300,
+	"Level 2" : 400,
+	"Level 3" : 500,
+	"Level 4" : 600,
+	"Level 5" : 800,
+	"Level 6" : 1000,
+	"Level 7" : 1200,
+	"Level 8" : 1500,
+	#"Endless" : 10000,
 }
 #--------------------------------------------
 # All the korban categories, text, and amount, this dictionary contains all the logic for orders.

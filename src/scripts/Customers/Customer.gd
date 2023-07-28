@@ -15,9 +15,9 @@ onready var orderDict : Dictionary
 onready var occasion : String
 onready var category : String
 
-const ZERO : float = 0.0
-const MINUS_POINTS : float = -250.0
-const CORRECT_ORDER_POINTS : float = 100.0
+const ZERO : int = 0
+const MINUS_POINTS : int = -200
+const CORRECT_ORDER_POINTS : int = 100
 
 onready var decreaseScore : bool = false
 
@@ -28,7 +28,7 @@ onready var pointsCalculationDict : Dictionary = {
 	"nice" : 1.0,
 	"bad" : 1.0,
 }
-var points : float = ZERO
+var points : int = ZERO
 #var successiveOrdersDone = 0
 
 signal spawn_card

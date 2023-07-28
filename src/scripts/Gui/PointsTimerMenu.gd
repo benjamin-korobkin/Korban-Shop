@@ -9,7 +9,7 @@ onready var pointsTween = $PointsTween
 onready var minutes
 onready var seconds
 onready var timeLeft
-onready var points : float = 0
+onready var points : int = 0
 onready var levelPointTreshold : int
 var pointsTweenActive : bool = false
 signal levelFailed
@@ -40,7 +40,7 @@ func set_timer_and_points(_timeLeft,_points):
 
 #updates all parameters, and emit level failed to levelGui if time is 0
 func _physics_process(delta):
-	pointsLabel.text = str(int(ceil(points))) + "/" + str(int(levelPointTreshold))
+	pointsLabel.text = str(points) + "/" + str(levelPointTreshold)
 	check_score()
 	seconds-= delta
 	timeLeft -= delta
@@ -70,7 +70,7 @@ func _on_PointsTween_tween_completed(object, key):
 #checks score if tween is active and sends a signal to levelGui if level complete
 func check_score():
 	var level = get_node("/root/Game/Levels").get_child(0)
-	if ceil(points) >= levelPointTreshold:
+	if points >= levelPointTreshold:
 		pointsTween.stop_all()
 		pointsTweenActive = false
 		set_physics_process(false)

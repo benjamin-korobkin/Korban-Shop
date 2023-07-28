@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://src/scripts/Game.gd" type="Script" id=1]
 [ext_resource path="res://src/scripts/Gui/Gui.gd" type="Script" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://src/Scenes/Gui/Themes/OrdersMenuTitleLabel.tres" type="Theme" id=12]
 [ext_resource path="res://src/scripts/Gui/KorbanButtons.gd" type="Script" id=13]
 [ext_resource path="res://src/scripts/Gui/OrdersManager.gd" type="Script" id=14]
+[ext_resource path="res://src/Scenes/Gui/GameCompletedMenu.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Assets/Sprites/Gui/Icons/White/2x/minus_disabled.png" type="Texture" id=21]
 [ext_resource path="res://Assets/Sprites/Gui/Icons/White/2x/minus.png" type="Texture" id=22]
 [ext_resource path="res://Assets/Sprites/Gui/Icons/White/2x/plus.png" type="Texture" id=23]
@@ -342,10 +343,18 @@ texture_pressed = ExtResource( 25 )
 texture_hover = ExtResource( 24 )
 texture_disabled = ExtResource( 28 )
 
-[node name="Bull" type="HBoxContainer" parent="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager"]
+[node name="MarginContainer3" type="MarginContainer" parent="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager"]
 margin_top = 104.0
 margin_right = 497.0
-margin_bottom = 204.0
+margin_bottom = 154.0
+rect_min_size = Vector2( 0, 50 )
+rect_pivot_offset = Vector2( 447.393, 15.165 )
+mouse_filter = 2
+
+[node name="Bull" type="HBoxContainer" parent="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager"]
+margin_top = 158.0
+margin_right = 497.0
+margin_bottom = 258.0
 alignment = 1
 script = ExtResource( 13 )
 
@@ -403,10 +412,18 @@ texture_pressed = ExtResource( 25 )
 texture_hover = ExtResource( 24 )
 texture_disabled = ExtResource( 28 )
 
-[node name="Lamb" type="HBoxContainer" parent="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager"]
-margin_top = 208.0
+[node name="MarginContainer4" type="MarginContainer" parent="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager"]
+margin_top = 262.0
 margin_right = 497.0
-margin_bottom = 308.0
+margin_bottom = 312.0
+rect_min_size = Vector2( 0, 50 )
+rect_pivot_offset = Vector2( 447.393, 15.165 )
+mouse_filter = 2
+
+[node name="Lamb" type="HBoxContainer" parent="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager"]
+margin_top = 316.0
+margin_right = 497.0
+margin_bottom = 416.0
 alignment = 1
 script = ExtResource( 13 )
 
@@ -464,10 +481,18 @@ texture_pressed = ExtResource( 25 )
 texture_hover = ExtResource( 24 )
 texture_disabled = ExtResource( 28 )
 
-[node name="Ram" type="HBoxContainer" parent="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager"]
-margin_top = 312.0
+[node name="MarginContainer5" type="MarginContainer" parent="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager"]
+margin_top = 420.0
 margin_right = 497.0
-margin_bottom = 412.0
+margin_bottom = 470.0
+rect_min_size = Vector2( 0, 50 )
+rect_pivot_offset = Vector2( 447.393, 15.165 )
+mouse_filter = 2
+
+[node name="Ram" type="HBoxContainer" parent="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager"]
+margin_top = 474.0
+margin_right = 497.0
+margin_bottom = 574.0
 alignment = 1
 script = ExtResource( 13 )
 
@@ -526,24 +551,24 @@ texture_hover = ExtResource( 24 )
 texture_disabled = ExtResource( 28 )
 
 [node name="MarginContainer2" type="MarginContainer" parent="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager"]
-margin_top = 416.0
+margin_top = 578.0
 margin_right = 497.0
-margin_bottom = 516.0
-rect_min_size = Vector2( 0, 100 )
+margin_bottom = 653.0
+rect_min_size = Vector2( 0, 75 )
 rect_pivot_offset = Vector2( 447.393, 15.165 )
 mouse_filter = 2
 
 [node name="CompleteOrder" type="HBoxContainer" parent="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager"]
-margin_top = 520.0
+margin_top = 657.0
 margin_right = 497.0
-margin_bottom = 620.0
+margin_bottom = 782.0
 alignment = 1
 
 [node name="CompleteOrderButton" type="Button" parent="GuiSafeArea/LevelGui/OrdersMenu/OrdersManager/CompleteOrder"]
-margin_left = 123.0
-margin_right = 373.0
-margin_bottom = 100.0
-rect_min_size = Vector2( 250, 100 )
+margin_left = 111.0
+margin_right = 386.0
+margin_bottom = 125.0
+rect_min_size = Vector2( 275, 125 )
 focus_mode = 0
 mouse_default_cursor_shape = 2
 theme = ExtResource( 33 )
@@ -578,6 +603,9 @@ focus_mode = 0
 mouse_default_cursor_shape = 2
 theme = ExtResource( 10 )
 icon = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="InGameMenu" parent="GuiSafeArea/LevelGui" instance=ExtResource( 5 )]
 pause_mode = 2
@@ -586,6 +614,9 @@ pause_mode = 2
 visible = false
 
 [node name="LevelFailedMenu" parent="GuiSafeArea/LevelGui" instance=ExtResource( 47 )]
+visible = false
+
+[node name="GameCompletedMenu" parent="GuiSafeArea/LevelGui" instance=ExtResource( 15 )]
 visible = false
 
 [node name="ForegroundColorRect" type="ColorRect" parent="GuiSafeArea"]

@@ -8,8 +8,6 @@ onready var shopCounterPos = $PlayerArea/ShopCounterPos
 onready var customersArea = $CustomersArea
 onready var customerSpawner = $CustomerSpawner
 onready var levelGui = get_node("/root/Game/GuiSafeArea/LevelGui")
-
-# For now, use an Array containing the occasions
 var currentOrders : Array
 
 signal handleOrdersMenuButton

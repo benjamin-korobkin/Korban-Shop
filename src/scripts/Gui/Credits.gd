@@ -8,7 +8,7 @@ onready var creditsBg = get_node("/root/Game/Gui").get_node("CreditsBg")
 
 
 func _ready():
-	roll_credits()
+	#roll_credits()
 	creditsBg.show()
 
 func roll_credits():

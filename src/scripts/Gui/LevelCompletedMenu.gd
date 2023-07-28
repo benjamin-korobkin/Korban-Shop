@@ -8,7 +8,6 @@ signal loadLevel
 onready var mainMenu = get_node("/root/Game/GuiSafeArea/MainMenu")
 
 
-
 # loads next Level
 func _on_NextLevelButton_pressed():
 	Sounds.play_sound("click","Sfx")
@@ -29,4 +28,3 @@ func load_next_level(nextLevel):
 	connect("loadLevel",get_node("/root/Game"),"_on_MainMenu_loadLevel",[],CONNECT_ONESHOT)
 	emit_signal("loadLevel",GameResources.levelScenesDict.keys()[nextLevel])
 	hide()
-

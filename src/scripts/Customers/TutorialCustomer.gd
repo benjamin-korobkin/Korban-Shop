@@ -23,8 +23,8 @@ onready var pointsCalculationDict : Dictionary = {
 	"nice" : 1.0,
 	"bad" : 1.0,
 }
-var CORRECT_ORDER_POINTS : float = 100.0
-var points : float = 0.0
+var CORRECT_ORDER_POINTS : int = 100
+var points : int = 0
 
 signal clickOnCutsomer
 

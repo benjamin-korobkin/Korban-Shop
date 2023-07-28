@@ -64,8 +64,11 @@ func reset_all_states():
 func display_gui(levelComleted,levelName):
 	get_tree().paused = true
 	if levelComleted:
-		$LevelCompletedMenu.nextLevel =  unlock_level(levelName)
-		$LevelCompletedMenu.show()
+		if levelName == "Level 8":
+			$GameCompletedMenu.show()
+		else:
+			$LevelCompletedMenu.nextLevel =  unlock_level(levelName)
+			$LevelCompletedMenu.show()
 	else:
 		$LevelFailedMenu.level = levelName
 		$LevelFailedMenu.show()
@@ -82,7 +85,6 @@ func unlock_level(levelName):
 	var levelsDict = GameResources.levelScenesDict.keys()
 	var nextLevel
 	for level in levelsDict.size() - 1:
-
 		if levelsDict[level] == levelName:
 			nextLevel = level + 1
 			break
