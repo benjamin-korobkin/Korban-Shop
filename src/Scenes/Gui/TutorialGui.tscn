@@ -244,6 +244,8 @@ tracks/0/keys = {
 pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2
 script = ExtResource( 5 )
 __meta__ = {
@@ -651,6 +653,9 @@ margin_top = 2.0
 margin_right = 393.0
 margin_bottom = 152.0
 theme = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Explanation" type="Label" parent="CardExplanation7/Background"]
 margin_top = 8.0
@@ -710,12 +715,15 @@ margin_top = 11.0
 margin_right = 362.0
 margin_bottom = 53.0
 theme = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Explanation" type="Label" parent="ShopExplanation"]
-margin_left = 54.0
-margin_top = 1.0
-margin_right = 392.0
-margin_bottom = 63.0
+[node name="Explanation" type="Label" parent="ShopExplanation/Background"]
+margin_left = -29.0
+margin_top = -10.0
+margin_right = 309.0
+margin_bottom = 52.0
 theme = ExtResource( 3 )
 text = "Click on the shop button"
 align = 1
@@ -739,21 +747,28 @@ anims/click = SubResource( 6 )
 [node name="ShopExplanation2" type="Control" parent="."]
 visible = false
 anchor_left = 0.5
-anchor_top = 0.14
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.14
-margin_left = -141.0
-margin_top = -0.360001
-margin_right = -141.0
-margin_bottom = -0.360001
+anchor_bottom = 1.0
+margin_left = -25.0
+margin_top = -599.0
+margin_right = -25.0
+margin_bottom = -599.0
 mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Background" type="Panel" parent="ShopExplanation2"]
-margin_left = 3.0
-margin_top = 400.0
-margin_right = 342.0
-margin_bottom = 469.0
+margin_left = -124.423
+margin_top = 128.67
+margin_right = 214.577
+margin_bottom = 197.67
 theme = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
 
 [node name="Explanation" type="Label" parent="ShopExplanation2/Background"]
 margin_left = -2.0
@@ -770,10 +785,10 @@ __meta__ = {
 }
 
 [node name="DownLeft" type="TextureRect" parent="ShopExplanation2"]
-margin_left = 266.0
-margin_top = 230.0
-margin_right = 366.0
-margin_bottom = 330.0
+margin_left = 161.23
+margin_top = -57.085
+margin_right = 261.23
+margin_bottom = 42.915
 texture = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false

@@ -124,10 +124,11 @@ func handle_level_selection_buttons(_startMenuPage):
 	for button in levelSelectionButtons.size():
 		if GameResources.startGameLevelTextDict[_startMenuPage].has(button):
 			var buttonName = GameResources.startGameLevelTextDict[_startMenuPage][button]
-			if GameStateService.globalData.has(buttonName) and GameStateService.globalData[buttonName] == true:
-				levelSelectionButtons[button].disabled = false
-			else:
-				levelSelectionButtons[button].disabled = true
+			levelSelectionButtons[button].disabled = false
+			#if GameStateService.globalData.has(buttonName) and GameStateService.globalData[buttonName] == true:
+			#	levelSelectionButtons[button].disabled = true
+			#else:
+			#	levelSelectionButtons[button].disabled = true
 
 #loads levels based on button text
 func _on_LevelSelectionButton_pressed():
