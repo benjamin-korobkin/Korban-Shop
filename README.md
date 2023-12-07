@@ -1,5 +1,5 @@
 # Korban-Shop
-## First README commit
+## Play it on [itch.io](korben12.itch.io/korban-shop)!
 
 Korban shop is an educational game where you learn about different animals that were offered for sacrifice during 
 the times of the Beit HaMikdash (Holy Temple) in Jerusalem
